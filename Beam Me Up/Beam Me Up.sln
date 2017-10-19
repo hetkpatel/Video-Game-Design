@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beam_Me_Up", "Beam Me Up\Beam_Me_Up\Beam_Me_Up.csproj", "{8DC5A165-2575-424F-8084-62A0A97E46B0}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Beam_Me_UpContent", "Beam Me Up\Beam_Me_UpContent\Beam_Me_UpContent.contentproj", "{66EA2CAE-D54A-4B0E-8076-2D71D136AE5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DC5A165-2575-424F-8084-62A0A97E46B0}.Debug|x86.ActiveCfg = Debug|x86
+		{8DC5A165-2575-424F-8084-62A0A97E46B0}.Debug|x86.Build.0 = Debug|x86
+		{8DC5A165-2575-424F-8084-62A0A97E46B0}.Release|x86.ActiveCfg = Release|x86
+		{8DC5A165-2575-424F-8084-62A0A97E46B0}.Release|x86.Build.0 = Release|x86
+		{66EA2CAE-D54A-4B0E-8076-2D71D136AE5E}.Debug|x86.ActiveCfg = Debug|x86
+		{66EA2CAE-D54A-4B0E-8076-2D71D136AE5E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

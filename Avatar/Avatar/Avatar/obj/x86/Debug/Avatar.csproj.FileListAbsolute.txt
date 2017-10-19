@@ -1,0 +1,22 @@
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\elf.xnb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\girl.xnb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\glasses.xnb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\tennis guy.xnb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\woman.xnb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Avatar.exe
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Avatar.pdb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\obj\x86\Debug\Avatar.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\obj\x86\Debug\Avatar.exe
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\obj\x86\Debug\Avatar.pdb
+C:\Users\145371\Desktop\Video Game Design\Avatar\Avatar\Avatar\bin\x86\Debug\Content\background.xnb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stars", "Stars\Stars\Stars.csproj", "{265C663A-268E-4A3D-8145-EAF4ABF1EB2E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "StarsContent", "Stars\StarsContent\StarsContent.contentproj", "{9248F9D9-FDC1-4DBA-ADC5-FB34B0D1BF6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{265C663A-268E-4A3D-8145-EAF4ABF1EB2E}.Debug|x86.ActiveCfg = Debug|x86
+		{265C663A-268E-4A3D-8145-EAF4ABF1EB2E}.Debug|x86.Build.0 = Debug|x86
+		{265C663A-268E-4A3D-8145-EAF4ABF1EB2E}.Release|x86.ActiveCfg = Release|x86
+		{265C663A-268E-4A3D-8145-EAF4ABF1EB2E}.Release|x86.Build.0 = Release|x86
+		{9248F9D9-FDC1-4DBA-ADC5-FB34B0D1BF6F}.Debug|x86.ActiveCfg = Debug|x86
+		{9248F9D9-FDC1-4DBA-ADC5-FB34B0D1BF6F}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

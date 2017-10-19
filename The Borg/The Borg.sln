@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The_Borg", "The Borg\The_Borg\The_Borg.csproj", "{4CA693EE-4398-4F22-9848-AE7A45A1F781}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "The_BorgContent", "The Borg\The_BorgContent\The_BorgContent.contentproj", "{955FFA2E-9A20-4AE9-AD98-1D3286EAAFAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CA693EE-4398-4F22-9848-AE7A45A1F781}.Debug|x86.ActiveCfg = Debug|x86
+		{4CA693EE-4398-4F22-9848-AE7A45A1F781}.Debug|x86.Build.0 = Debug|x86
+		{4CA693EE-4398-4F22-9848-AE7A45A1F781}.Release|x86.ActiveCfg = Release|x86
+		{4CA693EE-4398-4F22-9848-AE7A45A1F781}.Release|x86.Build.0 = Release|x86
+		{955FFA2E-9A20-4AE9-AD98-1D3286EAAFAD}.Debug|x86.ActiveCfg = Debug|x86
+		{955FFA2E-9A20-4AE9-AD98-1D3286EAAFAD}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

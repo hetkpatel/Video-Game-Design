@@ -1,0 +1,18 @@
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Content\Standing Man.xnb
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Content\Walking Man.xnb
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Follow_Me.exe
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Follow_Me.pdb
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\obj\x86\Debug\Follow_Me.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\obj\x86\Debug\Follow_Me.exe
+C:\Users\145371\Desktop\Video Game Design\Follow Me\Follow Me\Follow_Me\obj\x86\Debug\Follow_Me.pdb

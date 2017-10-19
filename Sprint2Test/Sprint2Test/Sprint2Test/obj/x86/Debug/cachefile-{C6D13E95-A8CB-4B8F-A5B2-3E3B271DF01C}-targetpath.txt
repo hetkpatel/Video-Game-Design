@@ -1,0 +1,13 @@
+Content\Card#1.xnb
+Content\Card#2.xnb
+Content\Uno Card #1.xnb
+Content\Uno Card #2.xnb
+Content\Uno Card #3.xnb
+Content\Uno Card #4.xnb
+Content\Uno Card #5.xnb
+Content\Uno Card #6.xnb
+Content\Uno Card #7.xnb
+Content\Uno Card #8.xnb
+Content\Uno Card #9.xnb
+Content\Uno Card Back.xnb
+Content\TimerFont.xnb

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>autodestructsequencearmed_ep.wav</Source>
+      <Name>autodestructsequencearmed_ep</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\autodestructsequencearmed_ep.xnb</Output>
+      <Time>2017-10-05T09:34:30.6248069-05:00</Time>
+    </Item>
+    <Item>
+      <Source>borg_cut_clean.wav</Source>
+      <Name>borg_cut_clean</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\borg_cut_clean.xnb</Output>
+      <Time>2017-10-05T09:34:30.6308075-05:00</Time>
+    </Item>
+    <Item>
+      <Source>commandcodesverified_ep.wav</Source>
+      <Name>commandcodesverified_ep</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\commandcodesverified_ep.xnb</Output>
+      <Time>2017-10-05T09:34:30.6368081-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ds9_door.wav</Source>
+      <Name>ds9_door</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\ds9_door.xnb</Output>
+      <Time>2017-10-05T09:34:30.6428087-05:00</Time>
+    </Item>
+    <Item>
+      <Source>klingon_torpedo_clean.wav</Source>
+      <Name>klingon_torpedo_clean</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\klingon_torpedo_clean.xnb</Output>
+      <Time>2017-10-05T09:34:30.6488093-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tng_phaser3_clean.wav</Source>
+      <Name>tng_phaser3_clean</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tng_phaser3_clean.xnb</Output>
+      <Time>2017-10-05T09:34:30.6548099-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tng_replicator.wav</Source>
+      <Name>tng_replicator</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tng_replicator.xnb</Output>
+      <Time>2017-10-05T09:34:30.695814-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tng_torpedo_clean.wav</Source>
+      <Name>tng_torpedo_clean</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tng_torpedo_clean.xnb</Output>
+      <Time>2017-10-05T09:34:30.7018146-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tng_transporter1.wav</Source>
+      <Name>tng_transporter1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tng_transporter1.xnb</Output>
+      <Time>2017-10-05T09:34:30.7348179-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tng_tricorder10.wav</Source>
+      <Name>tng_tricorder10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tng_tricorder10.xnb</Output>
+      <Time>2017-10-05T09:34:30.7408185-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_chirp_2.wav</Source>
+      <Name>tos_chirp_2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_chirp_2.xnb</Output>
+      <Time>2017-10-05T09:34:30.7668211-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_dilithium_burnout.wav</Source>
+      <Name>tos_dilithium_burnout</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_dilithium_burnout.xnb</Output>
+      <Time>2017-10-05T09:34:30.8018246-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_keypress1.wav</Source>
+      <Name>tos_keypress1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_keypress1.xnb</Output>
+      <Time>2017-10-05T09:34:30.8078252-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_keypress2.wav</Source>
+      <Name>tos_keypress2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_keypress2.xnb</Output>
+      <Time>2017-10-05T09:34:30.8138258-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_keypress3.wav</Source>
+      <Name>tos_keypress3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_keypress3.xnb</Output>
+      <Time>2017-10-05T09:34:30.8188263-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_keypress4.wav</Source>
+      <Name>tos_keypress4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_keypress4.xnb</Output>
+      <Time>2017-10-05T09:34:30.825827-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_many_tribble.wav</Source>
+      <Name>tos_many_tribble</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_many_tribble.xnb</Output>
+      <Time>2017-10-05T09:34:30.9818426-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_phaser_ricochet.wav</Source>
+      <Name>tos_phaser_ricochet</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_phaser_ricochet.xnb</Output>
+      <Time>2017-10-05T09:34:31.0148459-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_phaser_stun.wav</Source>
+      <Name>tos_phaser_stun</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_phaser_stun.xnb</Output>
+      <Time>2017-10-05T09:34:31.045849-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_photon_torpedo.wav</Source>
+      <Name>tos_photon_torpedo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_photon_torpedo.xnb</Output>
+      <Time>2017-10-05T09:34:31.0718516-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_red_alert_3.wav</Source>
+      <Name>tos_red_alert_3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_red_alert_3.xnb</Output>
+      <Time>2017-10-05T09:34:31.1178562-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_tribble_angry.wav</Source>
+      <Name>tos_tribble_angry</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_tribble_angry.xnb</Output>
+      <Time>2017-10-05T09:34:31.1518596-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tos_tribble_coos.wav</Source>
+      <Name>tos_tribble_coos</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\tos_tribble_coos.xnb</Output>
+      <Time>2017-10-05T09:34:31.2078652-05:00</Time>
+    </Item>
+    <Item>
+      <Source>alert10.wav</Source>
+      <Name>alert10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\alert10.xnb</Output>
+      <Time>2017-10-05T09:36:47.9405371-05:00</Time>
+    </Item>
+    <Item>
+      <Source>SongTitle.spritefont</Source>
+      <Name>SongTitle</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\SongTitle.xnb</Output>
+      <Time>2017-10-05T09:45:39.2436621-05:00</Time>
+    </Item>
+    <Item>
+      <Source>star-trek.jpg</Source>
+      <Name>star-trek</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\star-trek.xnb</Output>
+      <Time>2017-10-13T09:03:48.2225208-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{66EA2CAE-D54A-4B0E-8076-2D71D136AE5E}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_UpContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\145371\Desktop\Video Game Design\Beam Me Up\Beam Me Up\Beam_Me_Up\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
