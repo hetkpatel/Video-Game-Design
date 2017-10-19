@@ -122,7 +122,7 @@ namespace The_Borg
 
             // TODO: Add torpedo motion
             if (kb.IsKeyDown(Keys.Space) &&
-                !oldKb.IsKeyDown(Keys.Space))
+                !oldKb.IsKeyDown(Keys.Space) && delay == -1)
             {
                 //switch (index)
                 //{
@@ -142,6 +142,13 @@ namespace The_Borg
                 shootingIndex = index;
 
                 delay = gameTime.TotalGameTime.Seconds;
+            }
+
+            if (delay != -1 &&
+                (gameTime.TotalGameTime.Seconds - delay) == 3)
+            {
+                delay = -1;
+                shootingIndex = -1;
             }
                 
 
