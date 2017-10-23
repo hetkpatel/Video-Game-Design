@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rocket_Man", "Rocket Man\Rocket_Man\Rocket_Man.csproj", "{64407134-FC74-4187-B778-57CDA21852E1}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Rocket_ManContent", "Rocket Man\Rocket_ManContent\Rocket_ManContent.contentproj", "{3CBF702A-1E51-4A57-B625-757F1FA37D24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64407134-FC74-4187-B778-57CDA21852E1}.Debug|x86.ActiveCfg = Debug|x86
+		{64407134-FC74-4187-B778-57CDA21852E1}.Debug|x86.Build.0 = Debug|x86
+		{64407134-FC74-4187-B778-57CDA21852E1}.Release|x86.ActiveCfg = Release|x86
+		{64407134-FC74-4187-B778-57CDA21852E1}.Release|x86.Build.0 = Release|x86
+		{3CBF702A-1E51-4A57-B625-757F1FA37D24}.Debug|x86.ActiveCfg = Debug|x86
+		{3CBF702A-1E51-4A57-B625-757F1FA37D24}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

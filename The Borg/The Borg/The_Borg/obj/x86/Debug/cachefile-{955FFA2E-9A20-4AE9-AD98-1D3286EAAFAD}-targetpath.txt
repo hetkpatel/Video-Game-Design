@@ -6,5 +6,5 @@ Content\torpedo_down.xnb
 Content\torpedo_left.xnb
 Content\torpedo_right.xnb
 Content\torpedo_up.xnb
-Content\LSUFont.xnb
 Content\borg.xnb
+Content\LSUFont.xnb
