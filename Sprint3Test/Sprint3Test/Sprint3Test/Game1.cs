@@ -26,7 +26,7 @@ namespace Sprint3Test
         SoundEffect blowOut;
 
         bool startGame = false;
-        bool car1Won = false, car2Won = false;
+        //bool car1Won = false, car2Won = false;
 
         int timer = 0, seconds = 0, newSec = 0;
         int car1PO = 0, car2PO = 0;
@@ -245,10 +245,10 @@ namespace Sprint3Test
                     car1X += rnd.Next(car1PO + 1);
                     car2X += rnd.Next(car2PO + 1);
 
-                    if (car1X >= 1200)
-                        car1Won = true;
-                    else if (car2X >= 1200)
-                        car2Won = true;
+                    //if (car1X >= 1200)
+                    //    car1Won = true;
+                    //else if (car2X >= 1200)
+                    //    car2Won = true;
                 }
             }
 
@@ -270,7 +270,8 @@ namespace Sprint3Test
                 GraphicsDevice.Clear(Color.Black);
                 if (seconds >= 0)
                     spriteBatch.DrawString(titleFont, seconds + "", new Vector2(260, 300), Color.White);
-                else if (!car1Won && !car2Won)
+                else
+                //if (!car1Won && !car2Won)
                 {
                     spriteBatch.Draw(raceTrack, rtRct, Color.White);
                     car1Rct = new Rectangle(car1X, 275, 115, 100);
@@ -280,10 +281,14 @@ namespace Sprint3Test
                     spriteBatch.DrawString(titleFont, newSec + "sec", new Vector2(1100, 100), Color.White);
                     spriteBatch.DrawString(menuFont, "Car1: " + car1PO, new Vector2(0, 0), Color.White);
                     spriteBatch.DrawString(menuFont, "Car2: " + car2PO, new Vector2(1000, 0), Color.White);
-                } else
-                {
-
                 }
+                //else
+                //{
+                //    if (car1Won)
+                //        spriteBatch.DrawString(menuFont, "Car1: " + car1PO, new Vector2(0, 0), Color.White);
+                //    else
+                //    spriteBatch.DrawString(menuFont, "Car2: " + car2PO, new Vector2(1000, 0), Color.White);
+                //}
             } else
             {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
