@@ -86,7 +86,7 @@ namespace Rocket_Man
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            
             velocity += pad1.ThumbSticks.Left.Y * 0.5;
             if (velocity > 0)
             {
