@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint3Test", "Sprint3Test\Sprint3Test\Sprint3Test.csproj", "{759250D8-0AB5-4AA8-8F2C-7FC1689C4612}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Sprint3TestContent", "Sprint3Test\Sprint3TestContent\Sprint3TestContent.contentproj", "{E462DAD2-0F9E-45DD-B613-25F9D1C75864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{759250D8-0AB5-4AA8-8F2C-7FC1689C4612}.Debug|x86.ActiveCfg = Debug|x86
+		{759250D8-0AB5-4AA8-8F2C-7FC1689C4612}.Debug|x86.Build.0 = Debug|x86
+		{759250D8-0AB5-4AA8-8F2C-7FC1689C4612}.Release|x86.ActiveCfg = Release|x86
+		{759250D8-0AB5-4AA8-8F2C-7FC1689C4612}.Release|x86.Build.0 = Release|x86
+		{E462DAD2-0F9E-45DD-B613-25F9D1C75864}.Debug|x86.ActiveCfg = Debug|x86
+		{E462DAD2-0F9E-45DD-B613-25F9D1C75864}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
