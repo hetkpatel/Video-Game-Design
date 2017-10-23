@@ -36,7 +36,8 @@ namespace The_Borg
         int lsuEnergy = 100, mjChoice = 0;
         int index = 0, shootingIndex = -1;
         int torpedoX = 0, torpedoY = 0;
-        
+
+        bool[] showBorg = { false, false, false, false };
 
         public Game1()
         {
@@ -115,6 +116,7 @@ namespace The_Borg
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
             time += 1;
+            int seconds = time / 60;
 
             // TODO: Add your update logic here
             if (kb.IsKeyDown(Keys.Up) &&
@@ -203,7 +205,13 @@ namespace The_Borg
             }
             else if (lsuEnergy > 100)
                 lsuEnergy = 100;
-                
+
+            if (seconds == 5)
+            {
+                Random rnd = new Random();
+                showBorg[rnd.Next(4)] = true;
+            }
+
 
             oldKb = kb;
             base.Update(gameTime);
@@ -229,6 +237,18 @@ namespace The_Borg
             }
 
             spriteBatch.DrawString(lsuFont, lsuEnergy+"MJ", new Vector2(360, 220), Color.White);
+
+            if (showBorg[0])
+                borgRct = new Rectangle(350, 0, 75, 75);
+            else if (showBorg[1])
+                borgRct = new Rectangle(700, 200, 75, 75);
+            else if (showBorg[2])
+                borgRct = new Rectangle(350, 400, 75, 75);
+            else if (showBorg[3])
+                borgRct = new Rectangle(0, 200, 75, 75);
+
+            if (showBorg[0] || showBorg[1] || showBorg[2] || showBorg[3])
+                spriteBatch.Draw(borg, borgRct, Color.Red);
 
             spriteBatch.End();
             base.Draw(gameTime);
