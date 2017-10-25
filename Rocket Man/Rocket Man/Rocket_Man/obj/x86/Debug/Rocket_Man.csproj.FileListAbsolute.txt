@@ -15,3 +15,4 @@ C:\Users\145371\Desktop\Video Game Design\Rocket Man\Rocket Man\Rocket_Man\bin\x
 C:\Users\145371\Desktop\Video Game Design\Rocket Man\Rocket Man\Rocket_Man\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\145371\Desktop\Video Game Design\Rocket Man\Rocket Man\Rocket_Man\obj\x86\Debug\Rocket_Man.exe
 C:\Users\145371\Desktop\Video Game Design\Rocket Man\Rocket Man\Rocket_Man\obj\x86\Debug\Rocket_Man.pdb
+C:\Users\145371\Desktop\Video Game Design\Rocket Man\Rocket Man\Rocket_Man\obj\x86\Debug\Rocket_Man.csprojResolveAssemblyReference.cache

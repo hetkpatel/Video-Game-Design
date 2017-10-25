@@ -1,0 +1,6 @@
+Content\gun_turret_down.xnb
+Content\gun_turret_left.xnb
+Content\gun_turret_right.xnb
+Content\gun_turret_up.xnb
+Content\LSUFont.xnb
+Content\white.xnb
