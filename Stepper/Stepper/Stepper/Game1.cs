@@ -102,7 +102,7 @@ namespace Stepper
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            spriteBatch.Draw(blank, blankRct, blankRct, Color.White, (float)Math.PI * rotation / 180, new Vector2(50), blankFx, 0);
+            spriteBatch.Draw(blank, blankRct, null, Color.White, (float)Math.PI * rotation / 180, new Vector2(50), blankFx, 0);
             spriteBatch.End();
 
             base.Draw(gameTime);
