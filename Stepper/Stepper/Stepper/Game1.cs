@@ -21,6 +21,11 @@ namespace Stepper
 
         Texture2D blank;
         Rectangle blankRct;
+        SpriteEffects blankFx;
+
+        KeyboardState oldKb = Keyboard.GetState();
+
+        float rotation = 0;
 
         public Game1()
         {
@@ -52,7 +57,7 @@ namespace Stepper
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            blank = this.Content.Load<Texture2D>("background");
+            blank = this.Content.Load<Texture2D>("rocket");
         }
 
         /// <summary>
@@ -71,13 +76,20 @@ namespace Stepper
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
+            if (kb.IsKeyDown(Keys.Left) &&
+                !(oldKb.IsKeyDown(Keys.Left)))
+                rotation += 45;
+            else if (kb.IsKeyDown(Keys.Right) &&
+                !(oldKb.IsKeyDown(Keys.Right)))
+                rotation -= 45;
 
-
+            oldKb = kb;
             base.Update(gameTime);
         }
 
@@ -88,9 +100,10 @@ namespace Stepper
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
-            spriteBatch.Draw()
+            spriteBatch.Draw(blank, blankRct, blankRct, Color.White, (float)Math.PI * rotation / 180, new Vector2(50), blankFx, 0);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
