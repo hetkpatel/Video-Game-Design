@@ -19,6 +19,13 @@ namespace Sidekick
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Texture2D big, station, small;
+        Rectangle bigRct, staRct, smallRct;
+
+        int xSmall, xBig;
+        bool smallR = true, bigR = true;
+        bool redS = false, redB = true;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -33,7 +40,14 @@ namespace Sidekick
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
+            xBig = 0;
+            xSmall = 0;
+
+            bigRct = new Rectangle(xBig, 20, 150, 100);
+            staRct = new Rectangle(350, 200, 100, 100);
+            smallRct = new Rectangle(xSmall, (GraphicsDevice.Viewport.Height / 2) + 100, 50, 50);
 
             base.Initialize();
         }
@@ -48,6 +62,9 @@ namespace Sidekick
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            big = this.Content.Load<Texture2D>("BigMovingObj");
+            small = this.Content.Load<Texture2D>("SmallMovingObj");
+            station = this.Content.Load<Texture2D>("StationaryObj");
         }
 
         /// <summary>
@@ -71,6 +88,31 @@ namespace Sidekick
                 this.Exit();
 
             // TODO: Add your update logic here
+            if (smallR)
+                xSmall += 5;
+            else if (!smallR)
+                xSmall -= 5;
+
+            if (bigR)
+                xBig += 1;
+            else if (!bigR)
+                xBig -= 1;
+
+            smallRct = new Rectangle(xSmall, (GraphicsDevice.Viewport.Height / 2) + 100, 50, 50);
+            bigRct = new Rectangle(xBig, 20, 150, 100);
+
+            if ((xSmall + 50) == GraphicsDevice.Viewport.Width)
+                smallR = false;
+            else if (xSmall == 0)
+                smallR = true;
+
+            if ((xBig + 150) == GraphicsDevice.Viewport.Width)
+                bigR = false;
+            else if (xBig == 0)
+                bigR = true;
+            
+            redB = xBig < 200 || xBig > 450;
+            redS = xSmall < 300 || xSmall > 450;
 
             base.Update(gameTime);
         }
@@ -84,6 +126,17 @@ namespace Sidekick
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
+            if (!redB)
+                spriteBatch.Draw(big, bigRct, Color.Red);
+            else
+                spriteBatch.Draw(big, bigRct, Color.White);
+            
+            if (!redS)
+                spriteBatch.Draw(small, smallRct, Color.Red);
+            else
+                spriteBatch.Draw(small, smallRct, Color.White);
+
+            spriteBatch.Draw(station, staRct, Color.White);
 
             spriteBatch.End();
             base.Draw(gameTime);
