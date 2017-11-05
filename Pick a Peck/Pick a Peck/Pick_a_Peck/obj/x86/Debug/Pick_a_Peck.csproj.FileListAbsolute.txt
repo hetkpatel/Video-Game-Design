@@ -16,3 +16,21 @@ C:\Users\145371\Desktop\Video Game Design\Pick a Peck\Pick a Peck\Pick_a_Peck\ob
 C:\Users\145371\Desktop\Video Game Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Pick_a_Peck.exe
 C:\Users\145371\Desktop\Video Game Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Pick_a_Peck.pdb
 C:\Users\145371\Desktop\Video Game Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Content\SpriteSheet.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Pick_a_Peck.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Pick_a_Peck.pdb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Pick_a_Peck.csprojResolveAssemblyReference.cache
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Pick_a_Peck.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Pick a Peck\Pick a Peck\Pick_a_Peck\obj\x86\Debug\Pick_a_Peck.pdb
