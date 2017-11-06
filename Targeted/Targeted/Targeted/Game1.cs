@@ -23,7 +23,8 @@ namespace Targeted
         Texture2D tank, square;
         Rectangle tankRct, sqrRct;
 
-        int rotation = 1;
+        float rotation = 0;
+        const int DESIRED_SPEED = 10;
 
         public Game1()
         {
@@ -76,11 +77,22 @@ namespace Targeted
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            MouseState ms = Mouse.GetState();
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
+            int mouseXdist = ms.X - (GraphicsDevice.Viewport.Width / 2);
+            int mouseYdist = ms.Y - (GraphicsDevice.Viewport.Height / 2);
+
+            if (mouseXdist != 0)
+                rotation = (float)Math.Atan2(mouseXdist, mouseYdist);
+
+            if (ms.LeftButton == ButtonState.Pressed)
+            {
+                
+            }
 
             base.Update(gameTime);
         }
@@ -94,8 +106,7 @@ namespace Targeted
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            //spriteBatch.Draw(tank, tankRct, Color.White);
-            spriteBatch.Draw(tank, tankRct, null, Color.White, (float)(Math.PI / 180) * 45, new Vector2(25), sfx, 0);
+            spriteBatch.Draw(tank, tankRct, null, Color.White, -rotation, new Vector2(115, 110), sfx, 0);
 
             spriteBatch.End();
             base.Draw(gameTime);
