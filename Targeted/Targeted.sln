@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Targeted", "Targeted\Targeted\Targeted.csproj", "{87498E03-4C5D-47CA-BCCE-3F2E10417CC1}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TargetedContent", "Targeted\TargetedContent\TargetedContent.contentproj", "{63F3A8E5-084C-4570-BF98-E7A946CA7115}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87498E03-4C5D-47CA-BCCE-3F2E10417CC1}.Debug|x86.ActiveCfg = Debug|x86
+		{87498E03-4C5D-47CA-BCCE-3F2E10417CC1}.Debug|x86.Build.0 = Debug|x86
+		{87498E03-4C5D-47CA-BCCE-3F2E10417CC1}.Release|x86.ActiveCfg = Release|x86
+		{87498E03-4C5D-47CA-BCCE-3F2E10417CC1}.Release|x86.Build.0 = Release|x86
+		{63F3A8E5-084C-4570-BF98-E7A946CA7115}.Debug|x86.ActiveCfg = Debug|x86
+		{63F3A8E5-084C-4570-BF98-E7A946CA7115}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

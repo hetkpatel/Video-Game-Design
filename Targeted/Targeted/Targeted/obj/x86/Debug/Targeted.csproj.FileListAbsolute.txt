@@ -1,0 +1,18 @@
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Content\Tank.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Content\White Square.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Targeted.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Targeted.pdb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\obj\x86\Debug\Targeted.csprojResolveAssemblyReference.cache
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\obj\x86\Debug\Targeted.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Targeted\Targeted\Targeted\obj\x86\Debug\Targeted.pdb
