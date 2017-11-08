@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rubber_Ducky", "Rubber Ducky\Rubber_Ducky\Rubber_Ducky.csproj", "{E085781F-04AB-4953-B732-259A8F757705}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Rubber_DuckyContent", "Rubber Ducky\Rubber_DuckyContent\Rubber_DuckyContent.contentproj", "{0554DD47-80D6-4BAE-AB81-32971F9BE9F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E085781F-04AB-4953-B732-259A8F757705}.Debug|x86.ActiveCfg = Debug|x86
+		{E085781F-04AB-4953-B732-259A8F757705}.Debug|x86.Build.0 = Debug|x86
+		{E085781F-04AB-4953-B732-259A8F757705}.Release|x86.ActiveCfg = Release|x86
+		{E085781F-04AB-4953-B732-259A8F757705}.Release|x86.Build.0 = Release|x86
+		{0554DD47-80D6-4BAE-AB81-32971F9BE9F3}.Debug|x86.ActiveCfg = Debug|x86
+		{0554DD47-80D6-4BAE-AB81-32971F9BE9F3}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
