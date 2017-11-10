@@ -24,7 +24,11 @@ namespace Targeted
         Rectangle tankRct, sqrRct;
 
         float rotation = 0;
-        const int DESIRED_SPEED = 10;
+        const int DESIRED_SPEED = 7;
+
+        int x, y;
+        int shootx, shooty;
+        bool shoot = false;
 
         public Game1()
         {
@@ -42,7 +46,10 @@ namespace Targeted
         {
             this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
-            tankRct = new Rectangle(GraphicsDevice.Viewport.Width / 2 - 25, GraphicsDevice.Viewport.Height / 2 - 25, 50, 50);
+            tankRct = new Rectangle(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2, 50, 50);
+            x = GraphicsDevice.Viewport.Width / 2 - 5;
+            y = GraphicsDevice.Viewport.Height / 2 - 5;
+            sqrRct = new Rectangle(x, y, 10, 10);
 
             base.Initialize();
         }
@@ -86,12 +93,29 @@ namespace Targeted
             int mouseXdist = ms.X - (GraphicsDevice.Viewport.Width / 2);
             int mouseYdist = ms.Y - (GraphicsDevice.Viewport.Height / 2);
 
-            if (mouseXdist != 0)
+            if (mouseXdist != 0 && ms.X >= 0 && ms.X <= GraphicsDevice.Viewport.Width && ms.Y >= 0 && ms.Y <= GraphicsDevice.Viewport.Height)
                 rotation = (float)Math.Atan2(mouseXdist, mouseYdist);
+
+            int dy = -1, dx = -1;
 
             if (ms.LeftButton == ButtonState.Pressed)
             {
-                
+                shoot = true;
+                shootx = mouseXdist;
+                shooty = mouseYdist;
+                x = GraphicsDevice.Viewport.Width / 2 - 5;
+                y = GraphicsDevice.Viewport.Height / 2 - 5;
+            }
+
+            if (shoot)
+            {
+                double hyp = Math.Sqrt(Math.Pow(shootx, 2) + Math.Pow(shooty, 2));
+                double numUpdates = hyp / DESIRED_SPEED;
+                dx = (int)(shootx / numUpdates);
+                dy = (int)(shooty / numUpdates);
+                x += dx;
+                y += dy;
+                sqrRct = new Rectangle(x, y, 10, 10);
             }
 
             base.Update(gameTime);
@@ -106,6 +130,7 @@ namespace Targeted
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
+            spriteBatch.Draw(square, sqrRct, Color.White);
             spriteBatch.Draw(tank, tankRct, null, Color.White, -rotation, new Vector2(115, 110), sfx, 0);
 
             spriteBatch.End();
