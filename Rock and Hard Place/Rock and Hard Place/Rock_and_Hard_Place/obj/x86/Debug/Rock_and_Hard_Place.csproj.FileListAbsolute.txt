@@ -1,0 +1,18 @@
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Content\Hard Place.xnb
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Content\Rock.xnb
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Rock_and_Hard_Place.exe
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Rock_and_Hard_Place.pdb
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\obj\x86\Debug\Rock_and_Hard_Place.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\obj\x86\Debug\Rock_and_Hard_Place.exe
+C:\Users\145371\Desktop\Video Game Design\Rock and Hard Place\Rock and Hard Place\Rock_and_Hard_Place\obj\x86\Debug\Rock_and_Hard_Place.pdb
