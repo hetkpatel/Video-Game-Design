@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huff_n_Puff", "Huff-n-Puff\Huff_n_Puff\Huff_n_Puff.csproj", "{459392E6-CBF4-4927-BEB9-826E4871ACA8}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Huff_n_PuffContent", "Huff-n-Puff\Huff_n_PuffContent\Huff_n_PuffContent.contentproj", "{37747EA4-A263-4C90-AA45-B0DCE38A70B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{459392E6-CBF4-4927-BEB9-826E4871ACA8}.Debug|x86.ActiveCfg = Debug|x86
+		{459392E6-CBF4-4927-BEB9-826E4871ACA8}.Debug|x86.Build.0 = Debug|x86
+		{459392E6-CBF4-4927-BEB9-826E4871ACA8}.Release|x86.ActiveCfg = Release|x86
+		{459392E6-CBF4-4927-BEB9-826E4871ACA8}.Release|x86.Build.0 = Release|x86
+		{37747EA4-A263-4C90-AA45-B0DCE38A70B4}.Debug|x86.ActiveCfg = Debug|x86
+		{37747EA4-A263-4C90-AA45-B0DCE38A70B4}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
