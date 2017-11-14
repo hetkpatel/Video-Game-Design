@@ -22,7 +22,19 @@ namespace Huff_n_Puff
         Texture2D sprite;
         Rectangle[] bobLRct = new Rectangle[5];
         Rectangle[] bobRRct = new Rectangle[5];
+        Rectangle bobRct;
         Rectangle[] featherRct = new Rectangle[4];
+        Rectangle fethrRct;
+
+        Random fethrDirct = new Random(), fethrDist = new Random();
+
+        int playerState = 0, featherState = 0;
+        int playerX, playerY;
+        double featherX, featherY;
+        bool playerDirctL = true;
+        int time = 0;
+        int dirct;
+        double dist;
 
         public Game1()
         {
@@ -42,7 +54,17 @@ namespace Huff_n_Puff
             for (int i = 0; i < 5; i++)
                 bobLRct[i] = new Rectangle(i * 25, 0, 24, 34);
             for (int i = 0; i < 5; i++)
-                bobRRct[i] = new Rectangle(i * 25, 0, 24, 34);
+                bobRRct[i] = new Rectangle(i * 25, 35, 24, 34);
+            for (int i = 0; i < 4; i++)
+                featherRct[i] = new Rectangle(i * 25, 70, 24, 24);
+
+            playerX = GraphicsDevice.Viewport.Width / 2 - 38;
+            playerY = GraphicsDevice.Viewport.Height - 106;
+            bobRct = new Rectangle(playerX, playerY, 75, 106);
+
+            featherX = GraphicsDevice.Viewport.Width / 2 - 25;
+            featherY = GraphicsDevice.Viewport.Height / 2 - 25;
+            fethrRct = new Rectangle((int)featherX, (int)featherY, 50, 50);
 
             base.Initialize();
         }
@@ -76,13 +98,91 @@ namespace Huff_n_Puff
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
+            time++;
+            double seconds = time / 60.0;
+            bool changeSeconds = seconds % 0.25 == 0;
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
+            if (changeSeconds)
+                featherState++;
+
+            if (seconds % 3 == 0)
+            {
+                dirct = fethrDirct.Next(2);
+                dist = fethrDist.NextDouble();
+            }
+
+            if (dirct == 0)
+                featherX += dist;
+            else
+                featherX -= dist;
+
+            if (playerDirctL && kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)))
+                playerDirctL = false;
+            else if (!playerDirctL && kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)))
+                playerDirctL = true;
+
+            if (kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)) && !(kb.IsKeyDown(Keys.Space)))
+            {
+                if (changeSeconds)
+                    playerState++;
+                if (playerState >= 4)
+                    playerState = 0;
+                playerX += 5;
+                playerY = GraphicsDevice.Viewport.Height - 106;
+            }
+            else if (kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)) && !(kb.IsKeyDown(Keys.Space)))
+            {
+                if (changeSeconds)
+                    playerState++;
+                if (playerState >= 4)
+                    playerState = 0;
+                playerX -= 5;
+                playerY = GraphicsDevice.Viewport.Height - 106;
+            }
+            else if (kb.IsKeyDown(Keys.Space))
+            {
+                playerState = 4;
+                playerY = GraphicsDevice.Viewport.Height - 117;
+                if (puffFeather())
+                    featherY -= 1;
+            }
+            else
+            {
+                playerState = 0;
+                playerY = GraphicsDevice.Viewport.Height - 106;
+                featherY += 0.5;
+            }
+            
+            if (featherState == 4)
+                featherState = 0;
+
+            if (playerX < -80)
+                playerX = GraphicsDevice.Viewport.Width + 5;
+            else if (playerX > GraphicsDevice.Viewport.Width + 5)
+                playerX = -80;
+
+            if (featherX < -55)
+                featherX = GraphicsDevice.Viewport.Width + 5;
+            else if (featherX > GraphicsDevice.Viewport.Width + 5)
+                featherX = -55;
+
+            bobRct = new Rectangle(playerX, playerY, 75, 106);
+            fethrRct = new Rectangle((int)featherX, (int)featherY, 50, 50);
 
             base.Update(gameTime);
+        }
+
+        private Boolean puffFeather()
+        {
+            const int PADDING = 35;
+            if (bobRct.X >= (fethrRct.X - PADDING) && (bobRct.X + 75) < (fethrRct.X + 50 + PADDING))
+                return true;
+            else return false;
         }
 
         /// <summary>
@@ -92,9 +192,15 @@ namespace Huff_n_Puff
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
+            if (playerDirctL)
+                spriteBatch.Draw(sprite, bobRct, bobLRct[playerState], Color.White);
+            else
+                spriteBatch.Draw(sprite, bobRct, bobRRct[playerState], Color.White);
 
+            spriteBatch.Draw(sprite, fethrRct, featherRct[featherState], Color.White);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
