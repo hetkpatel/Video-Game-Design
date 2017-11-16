@@ -1,0 +1,4 @@
+C:\Users\pageg\Desktop\Pong\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
+E:\_Games\___SELF-PACED COURSE\Sprint 04 - Geometry\30.1 Pong\Pong - v0 (Starter)\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
+C:\Users\145371\Downloads\Pong - v0 (Starter)\Pong - v0 (Starter)\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Pong\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
