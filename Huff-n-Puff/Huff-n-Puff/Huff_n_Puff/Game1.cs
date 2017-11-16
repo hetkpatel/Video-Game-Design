@@ -28,6 +28,7 @@ namespace Huff_n_Puff
 
         Random fethrDirct = new Random(), fethrDist = new Random();
 
+        bool gameInPlay = true;
         int playerState = 0, featherState = 0;
         int playerX, playerY;
         double featherX, featherY;
@@ -99,80 +100,87 @@ namespace Huff_n_Puff
         protected override void Update(GameTime gameTime)
         {
             KeyboardState kb = Keyboard.GetState();
-            time++;
-            double seconds = time / 60.0;
-            bool changeSeconds = seconds % 0.25 == 0;
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-
-            // TODO: Add your update logic here
-            if (changeSeconds)
-                featherState++;
-
-            if (seconds % 3 == 0)
+            time++;
+            double seconds = time / 60.0;
+            bool changeSeconds = seconds % 0.25 == 0;
+            if (gameInPlay)
             {
-                dirct = fethrDirct.Next(2);
-                dist = fethrDist.NextDouble();
-            }
-
-            if (dirct == 0)
-                featherX += dist;
-            else
-                featherX -= dist;
-
-            if (playerDirctL && kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)))
-                playerDirctL = false;
-            else if (!playerDirctL && kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)))
-                playerDirctL = true;
-
-            if (kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)) && !(kb.IsKeyDown(Keys.Space)))
-            {
+                // TODO: Add your update logic here
                 if (changeSeconds)
-                    playerState++;
-                if (playerState >= 4)
+                    featherState++;
+
+                if (seconds % 3 == 0)
+                    dirct = fethrDirct.Next(2);
+                if (seconds % 2 == 0)
+                    dist = fethrDist.NextDouble();
+
+                if (dirct == 0)
+                    featherX += dist;
+                else
+                    featherX -= dist;
+
+                if (playerDirctL && kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)))
+                    playerDirctL = false;
+                else if (!playerDirctL && kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)))
+                    playerDirctL = true;
+
+                if (kb.IsKeyDown(Keys.Right) && !(kb.IsKeyDown(Keys.Left)) && !(kb.IsKeyDown(Keys.Space)))
+                {
+                    if (changeSeconds)
+                        playerState++;
+                    if (playerState >= 4)
+                        playerState = 0;
+                    playerX += 5;
+                    playerY = GraphicsDevice.Viewport.Height - 106;
+                    featherY += 0.5;
+                }
+                else if (kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)) && !(kb.IsKeyDown(Keys.Space)))
+                {
+                    if (changeSeconds)
+                        playerState++;
+                    if (playerState >= 4)
+                        playerState = 0;
+                    playerX -= 5;
+                    playerY = GraphicsDevice.Viewport.Height - 106;
+                    featherY += 0.5;
+                }
+                else if (kb.IsKeyDown(Keys.Space))
+                {
+                    playerState = 4;
+                    playerY = GraphicsDevice.Viewport.Height - 117;
+                    if (puffFeather())
+                        featherY -= 1;
+                    else
+                        featherY += 0.5;
+                }
+                else
+                {
                     playerState = 0;
-                playerX += 5;
-                playerY = GraphicsDevice.Viewport.Height - 106;
-            }
-            else if (kb.IsKeyDown(Keys.Left) && !(kb.IsKeyDown(Keys.Right)) && !(kb.IsKeyDown(Keys.Space)))
-            {
-                if (changeSeconds)
-                    playerState++;
-                if (playerState >= 4)
-                    playerState = 0;
-                playerX -= 5;
-                playerY = GraphicsDevice.Viewport.Height - 106;
-            }
-            else if (kb.IsKeyDown(Keys.Space))
-            {
-                playerState = 4;
-                playerY = GraphicsDevice.Viewport.Height - 117;
-                if (puffFeather())
-                    featherY -= 1;
-            }
-            else
-            {
-                playerState = 0;
-                playerY = GraphicsDevice.Viewport.Height - 106;
-                featherY += 0.5;
-            }
-            
-            if (featherState == 4)
-                featherState = 0;
+                    playerY = GraphicsDevice.Viewport.Height - 106;
+                    featherY += 0.5;
+                }
 
-            if (playerX < -80)
-                playerX = GraphicsDevice.Viewport.Width + 5;
-            else if (playerX > GraphicsDevice.Viewport.Width + 5)
-                playerX = -80;
+                if (featherState == 4)
+                    featherState = 0;
 
-            if (featherX < -55)
-                featherX = GraphicsDevice.Viewport.Width + 5;
-            else if (featherX > GraphicsDevice.Viewport.Width + 5)
-                featherX = -55;
+                if (playerX < -80)
+                    playerX = GraphicsDevice.Viewport.Width + 5;
+                else if (playerX > GraphicsDevice.Viewport.Width + 5)
+                    playerX = -80;
 
-            bobRct = new Rectangle(playerX, playerY, 75, 106);
-            fethrRct = new Rectangle((int)featherX, (int)featherY, 50, 50);
+                if (featherX < -55)
+                    featherX = GraphicsDevice.Viewport.Width + 5;
+                else if (featherX > GraphicsDevice.Viewport.Width + 5)
+                    featherX = -55;
+                if (featherY > (GraphicsDevice.Viewport.Height - 50))
+                    gameInPlay = false;
+
+                bobRct = new Rectangle(playerX, playerY, 75, 106);
+                fethrRct = new Rectangle((int)featherX, (int)featherY, 50, 50);
+            }
 
             base.Update(gameTime);
         }
