@@ -27,9 +27,6 @@ namespace Chess_Board
         Texture2D[] whitePcs = new Texture2D[6];
         Texture2D board;
 
-        KeyboardState oldKb = Keyboard.GetState();
-        int multiple = 0;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -63,11 +60,10 @@ namespace Chess_Board
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    blackPcs[i] = this.Content.Load<Texture2D>("B" + "2");
-            //}
-            blackPcs[0] = this.Content.Load<Texture2D>("B1");
+            for (int i = 0; i < 6; i++)
+            {
+                blackPcs[i] = this.Content.Load<Texture2D>("B" + (i + 1));
+            }
             for (int i = 0; i < 6; i++)
             {
                 whitePcs[i] = this.Content.Load<Texture2D>("W" + (i + 1));
@@ -91,25 +87,11 @@ namespace Chess_Board
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            KeyboardState kb = Keyboard.GetState();
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (kb.IsKeyDown(Keys.Up) &&
-                !(oldKb.IsKeyDown(Keys.Up)))
-            {
-                multiple++;
-                Console.WriteLine(multiple);
-            } else if (kb.IsKeyDown(Keys.Down) &&
-                !(oldKb.IsKeyDown(Keys.Down)))
-            {
-                multiple--;
-                Console.WriteLine(multiple);
-            }
-
-            oldKb = kb;
 
             base.Update(gameTime);
         }
@@ -125,19 +107,45 @@ namespace Chess_Board
             // TODO: Add your drawing code here
             spriteBatch.Draw(board, boardRtc, Color.White);
 
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    blackRtc[i] = new Rectangle((i * 61) + 10, 9, 55, 60);
-            //    spriteBatch.Draw(blackPcs[i], blackRtc[i], Color.White);
-            //}
-            blackRtc[0] = new Rectangle(0, 9, 55, 60);
-            spriteBatch.Draw(blackPcs[0], blackRtc[0], Color.White);
+            for (int i = 0; i < 3; i++)
+            {
+                blackRtc[i] = new Rectangle((i * 61) + 10, 14, 50, 50);
+                spriteBatch.Draw(blackPcs[i], blackRtc[i], Color.White);
+            }
+            blackRtc[3] = new Rectangle(193, 14, 50, 50);
+            spriteBatch.Draw(blackPcs[3], blackRtc[3], Color.White);
+            blackRtc[4] = new Rectangle(255, 14, 50, 50);
+            spriteBatch.Draw(blackPcs[4], blackRtc[4], Color.White);
+            for (int i = 0; i < 3; i++)
+            {
+                blackRtc[i] = new Rectangle((i * 61) + 318, 14, 50, 50);
+                spriteBatch.Draw(blackPcs[2-i], blackRtc[i], Color.White);
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                blackRtc[5] = new Rectangle((i * 61) + 10, 79, 50, 50);
+                spriteBatch.Draw(blackPcs[5], blackRtc[5], Color.White);
+            }
 
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    blackRtc[5] = new Rectangle((i * 61) + 10, 75, 55, 60);
-            //    spriteBatch.Draw(blackPcs[5], blackRtc[5], Color.White);
-            //}
+            for (int i = 0; i < 3; i++)
+            {
+                whiteRtc[i] = new Rectangle((i * 61) + 10, 477, 50, 50);
+                spriteBatch.Draw(whitePcs[i], whiteRtc[i], Color.White);
+            }
+            whiteRtc[3] = new Rectangle(193, 477, 50, 50);
+            spriteBatch.Draw(whitePcs[3], whiteRtc[3], Color.White);
+            whiteRtc[4] = new Rectangle(255, 477, 50, 50);
+            spriteBatch.Draw(whitePcs[4], whiteRtc[4], Color.White);
+            for (int i = 0; i < 3; i++)
+            {
+                whiteRtc[i] = new Rectangle((i * 61) + 318, 477, 50, 50);
+                spriteBatch.Draw(whitePcs[2 - i], whiteRtc[i], Color.White);
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                whiteRtc[5] = new Rectangle((i * 61) + 10, 410, 50, 50);
+                spriteBatch.Draw(whitePcs[5], whiteRtc[5], Color.White);
+            }
 
             spriteBatch.End();
             base.Draw(gameTime);

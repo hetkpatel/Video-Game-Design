@@ -2,22 +2,22 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
+      <Source>Board.png</Source>
+      <Name>Board</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\Board.xnb</Output>
+      <Time>2018-01-08T08:44:52.5901501-06:00</Time>
+    </Item>
+    <Item>
       <Source>B1.png</Source>
       <Name>B1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B1.xnb</Output>
-      <Time>2018-01-04T08:44:19.1296629-06:00</Time>
-    </Item>
-    <Item>
-      <Source>B2.png</Source>
-      <Name>B2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B2.xnb</Output>
-      <Time>2018-01-04T08:44:19.1608601-06:00</Time>
+      <Time>2018-01-08T08:44:18.1445801-06:00</Time>
     </Item>
     <Item>
       <Source>B3.png</Source>
@@ -26,16 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B3.xnb</Output>
-      <Time>2018-01-04T08:44:19.1296629-06:00</Time>
-    </Item>
-    <Item>
-      <Source>B4.png</Source>
-      <Name>B4</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B4.xnb</Output>
-      <Time>2018-01-04T08:44:19.1764587-06:00</Time>
+      <Time>2018-01-08T08:44:41.7856721-06:00</Time>
     </Item>
     <Item>
       <Source>B5.png</Source>
@@ -44,7 +35,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B5.xnb</Output>
-      <Time>2018-01-04T08:44:19.1452615-06:00</Time>
+      <Time>2018-01-08T08:44:41.7856721-06:00</Time>
+    </Item>
+    <Item>
+      <Source>B2.png</Source>
+      <Name>B2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B2.xnb</Output>
+      <Time>2018-01-08T08:44:41.8012777-06:00</Time>
     </Item>
     <Item>
       <Source>B6.png</Source>
@@ -53,34 +53,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B6.xnb</Output>
-      <Time>2018-01-04T08:44:19.1608601-06:00</Time>
+      <Time>2018-01-08T08:44:41.8168833-06:00</Time>
     </Item>
     <Item>
-      <Source>Board.png</Source>
-      <Name>Board</Name>
+      <Source>B4.png</Source>
+      <Name>B4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\Board.xnb</Output>
-      <Time>2018-01-04T08:44:19.1920573-06:00</Time>
-    </Item>
-    <Item>
-      <Source>W1.png</Source>
-      <Name>W1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W1.xnb</Output>
-      <Time>2018-01-04T08:44:19.2076559-06:00</Time>
-    </Item>
-    <Item>
-      <Source>W2.png</Source>
-      <Name>W2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W2.xnb</Output>
-      <Time>2018-01-04T08:44:19.2076559-06:00</Time>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\B4.xnb</Output>
+      <Time>2018-01-08T08:44:41.8168833-06:00</Time>
     </Item>
     <Item>
       <Source>W3.png</Source>
@@ -89,16 +71,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W3.xnb</Output>
-      <Time>2018-01-04T08:44:19.2544517-06:00</Time>
+      <Time>2018-01-08T08:44:52.6057557-06:00</Time>
     </Item>
     <Item>
-      <Source>W4.png</Source>
-      <Name>W4</Name>
+      <Source>W1.png</Source>
+      <Name>W1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W4.xnb</Output>
-      <Time>2018-01-04T08:44:19.2700503-06:00</Time>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W1.xnb</Output>
+      <Time>2018-01-08T08:44:52.6057557-06:00</Time>
     </Item>
     <Item>
       <Source>W5.png</Source>
@@ -107,7 +89,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W5.xnb</Output>
-      <Time>2018-01-04T08:44:19.2700503-06:00</Time>
+      <Time>2018-01-08T08:44:52.6213613-06:00</Time>
+    </Item>
+    <Item>
+      <Source>W2.png</Source>
+      <Name>W2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W2.xnb</Output>
+      <Time>2018-01-08T08:44:52.6369669-06:00</Time>
     </Item>
     <Item>
       <Source>W6.png</Source>
@@ -116,7 +107,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W6.xnb</Output>
-      <Time>2018-01-04T08:44:19.2856489-06:00</Time>
+      <Time>2018-01-08T08:44:52.6369669-06:00</Time>
+    </Item>
+    <Item>
+      <Source>W4.png</Source>
+      <Name>W4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Chess Board\Chess Board\Chess_Board\bin\x86\Debug\Content\W4.xnb</Output>
+      <Time>2018-01-08T08:44:52.6525725-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
