@@ -13,31 +13,41 @@ namespace War
 {
     public class Card
     {
-        ContentManager cm;
-        SpriteFont sf;
+        ContentManager contentManager;
+        SpriteFont spriteFont;
 
         Texture2D cardTxtre;
         String suite, value;
 
         public Card(ContentManager c)
         {
-            cm = c;
-            sf = cm.Load<SpriteFont>("CardFont");
+            contentManager = c;
+            spriteFont = contentManager.Load<SpriteFont>("CardFont");
         }
 
         public void LoadContent(String contentName, String suite, String value)
         {
-            cardTxtre = cm.Load<Texture2D>(contentName);
+            cardTxtre = contentManager.Load<Texture2D>(contentName);
             this.suite = suite;
             this.value = value;
         }
 
-        public void Draw(GraphicsDevice gb, Rectangle cardRctgl)
+        public void Draw(GraphicsDevice gb, int order)
         {
             SpriteBatch sb = new SpriteBatch(gb);
             sb.Begin();
+            Rectangle cardRctgl = new Rectangle();
+            if (order == 0)
+            {
+                cardRctgl = new Rectangle(20, 20, 300, 400);
+                sb.DrawString(spriteFont, "Suite: " + suite + "\nValue: " + value, new Vector2(20, 420), Color.White);
+            }
+            else
+            {
+                cardRctgl = new Rectangle(425, 20, 300, 400);
+                sb.DrawString(spriteFont, "Suite: " + suite + "\nValue: " + value, new Vector2(425, 420), Color.White);
+            }
             sb.Draw(cardTxtre, cardRctgl, Color.White);
-            sb.DrawString(sf, "Suite: " + suite + "\nValue: " + value, new Vector2(50), Color.White);
             sb.End();
         }
     }

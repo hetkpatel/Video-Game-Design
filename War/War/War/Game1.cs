@@ -21,6 +21,8 @@ namespace War
 
         List<Card> cards;
 
+        bool pick = false;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -35,6 +37,7 @@ namespace War
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
             cards = new List<Card>(52);
 
@@ -49,11 +52,48 @@ namespace War
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+
             // TODO: use this.Content to load your game content here
-            for (int i = 0;i < cards.Capacity/4;i++)
+
+            // Clubs
+            for (int i = 0; i < cards.Capacity / 4; i++)
             {
-                //cards[i].LoadContent("c" + i, "Clubs");
+                String index = String.Concat("", (i + 1));
+                if (i <= 8)
+                    index = String.Concat("0", index);
+                Card c = new Card(this.Content);
+                c.LoadContent(String.Concat("c", index), "Clubs", index);
+                cards.Add(c);
+            }
+            // Diamonds
+            for (int i = 0; i < cards.Capacity / 4; i++)
+            {
+                String index = String.Concat("", (i + 1));
+                if (i <= 8)
+                    index = String.Concat("0", index);
+                Card c = new Card(this.Content);
+                c.LoadContent(String.Concat("d", index), "Diamonds", index);
+                cards.Add(c);
+            }
+            // Hearts
+            for (int i = 0; i < cards.Capacity / 4; i++)
+            {
+                String index = String.Concat("", (i + 1));
+                if (i <= 8)
+                    index = String.Concat("0", index);
+                Card c = new Card(this.Content);
+                c.LoadContent(String.Concat("h", index), "Hearts", index);
+                cards.Add(c);
+            }
+            // Spades
+            for (int i = 0; i < cards.Capacity / 4; i++)
+            {
+                String index = String.Concat("", (i + 1));
+                if (i <= 8)
+                    index = String.Concat("0", index);
+                Card c = new Card(this.Content);
+                c.LoadContent(String.Concat("s", index), "Spades", index);
+                cards.Add(c);
             }
         }
 
@@ -76,21 +116,67 @@ namespace War
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                pick = false;
 
             // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
 
+        public List<T> Shuffle_Cards<T>(T Value, List<T> CList)
+        {
+            // Local Vars
+            int I, R;
+            bool Flag;
+            Random Rand = new Random();
+            // Local List of T type
+            var CardList = new List<T>();
+            // Build Local List as big as passed in list and fill it with default value
+            for (I = 0; I < CList.Count; I++)
+                CardList.Add(Value);
+            // Shuffle the list of cards
+            for (I = 0; I < CList.Count; I++)
+            {
+                Flag = false;
+                // Loop until an empty spot is found
+                do
+                {
+                    R = Rand.Next(0, CList.Count);
+                    if (CardList[R].Equals(Value))
+                    {
+                        Flag = true;
+                        CardList[R] = CList[I];
+                    }
+                } while (!Flag);
+            }
+            // Return the shuffled list
+            return CardList;
+        }
+
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        int index1, index2;
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             // TODO: Add your drawing code here
+            
+            if (!pick)
+            {
+                Random rnd = new Random();
+                cards = Shuffle_Cards(cards[0], cards);
+                index2 = rnd.Next(52);
+                cards = Shuffle_Cards(cards[0], cards);
+                index1 = rnd.Next(52);
+                pick = true;
+            }
+
+            cards[index1].Draw(graphics.GraphicsDevice, 0);
+            cards[index2].Draw(graphics.GraphicsDevice, 1);
 
             base.Draw(gameTime);
         }
