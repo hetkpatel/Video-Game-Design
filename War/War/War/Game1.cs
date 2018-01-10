@@ -116,8 +116,6 @@ namespace War
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                pick = false;
 
             // TODO: Add your update logic here
 
