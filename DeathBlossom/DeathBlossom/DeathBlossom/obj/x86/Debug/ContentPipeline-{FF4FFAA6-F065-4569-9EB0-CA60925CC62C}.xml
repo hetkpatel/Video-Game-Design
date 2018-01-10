@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\space.xnb</Output>
+      <Output>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\space.xnb</Output>
       <Time>2018-01-03T09:10:52-06:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\gunstar.xnb</Output>
+      <Output>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\gunstar.xnb</Output>
       <Time>2018-01-03T12:03:06-06:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\missile2.xnb</Output>
+      <Output>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\missile2.xnb</Output>
       <Time>2018-01-05T12:04:30-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -35,10 +35,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossomContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossomContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\145371\Desktop\Video Game Design\DeathBlossom\DeathBlossom\DeathBlossom\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -67,7 +67,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2017-10-02T14:05:17.186501-05:00</Value>
+        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
