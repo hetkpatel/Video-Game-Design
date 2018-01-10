@@ -1,0 +1,2 @@
+C:\Users\pageg\Desktop\DeathBlossom\DeathBlossom\DeathBlossomContent\obj\x86\Debug\DeathBlossomContent.contentprojResolveAssemblyReference.cache
+C:\Users\pageg\Desktop\DeathBlossom-Starter\DeathBlossom\DeathBlossom\DeathBlossomContent\obj\x86\Debug\DeathBlossomContent.contentprojResolveAssemblyReference.cache
