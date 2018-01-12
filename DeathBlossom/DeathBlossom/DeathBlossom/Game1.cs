@@ -42,6 +42,7 @@ namespace DeathBlossom
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
 
             // Get current game window dimensions
@@ -98,7 +99,7 @@ namespace DeathBlossom
             if (kb.IsKeyDown(Keys.Space) && !oldKB.IsKeyDown(Keys.Space))
                 ship.fire();
 
-
+            Console.WriteLine(ship.Heading);
 
 
 
