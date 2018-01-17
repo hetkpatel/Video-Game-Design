@@ -27,6 +27,8 @@ namespace Chess_Board
         Texture2D[] whitePcs = new Texture2D[6];
         Texture2D board;
 
+        int multiple = 60;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -90,6 +92,11 @@ namespace Chess_Board
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.U))
+                multiple++;
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+                multiple--;
 
             // TODO: Add your update logic here
 

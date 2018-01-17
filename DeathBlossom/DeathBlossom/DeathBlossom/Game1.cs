@@ -18,11 +18,12 @@ namespace DeathBlossom
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D spaceTex;
+        Texture2D spaceTex, missileTex;
         Rectangle screenRect;
         Gunstar ship;
         KeyboardState oldKB;
 
+        List<Missile> missileList;
 
         public Game1()
         {
@@ -50,6 +51,8 @@ namespace DeathBlossom
             int screenHeight = graphics.GraphicsDevice.Viewport.Height;
             screenRect = new Rectangle(0, 0, screenWidth, screenHeight);
             oldKB = Keyboard.GetState();
+
+            missileList = new List<Missile>();
             
             base.Initialize();
         }
@@ -67,6 +70,7 @@ namespace DeathBlossom
             Texture2D gunstarTex = Content.Load<Texture2D>("gunstar");
             Rectangle gunstarRect = new Rectangle(500, 300, 70, 50);
             ship = new Gunstar(gunstarTex, gunstarRect);
+            missileTex = Content.Load<Texture2D>("missile2");
 
             // TODO: use this.Content to load your game content here
 
@@ -98,8 +102,15 @@ namespace DeathBlossom
             // TODO: Add your update logic here
             if (kb.IsKeyDown(Keys.Space) && !oldKB.IsKeyDown(Keys.Space))
                 ship.fire();
-
-            Console.WriteLine(ship.Heading);
+            
+            if (ship.IsFiring)
+            {
+                missileList.Add(new Missile(missileTex, ship.Location, ship.Heading));
+                foreach (Missile m in missileList)
+                {
+                    m.Update();
+                }
+            }
 
 
 
@@ -123,7 +134,10 @@ namespace DeathBlossom
 
             // TODO: Add your drawing code here
 
-
+            foreach (Missile m in missileList)
+            {
+                m.Draw(spriteBatch, gameTime);
+            }
 
             spriteBatch.End();
             base.Draw(gameTime);
