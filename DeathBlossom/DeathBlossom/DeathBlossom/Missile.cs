@@ -17,30 +17,41 @@ namespace DeathBlossom
         Rectangle missileRect;
         Vector2 missileCenter;
         double heading;
-        int posX, posY;
+        double posX, posY;
 
-        public Missile(Texture2D texture, Vector2 location, double heading)
+        public Missile(Texture2D texture, Vector2 location, double heading, Rectangle gunstarRct)
         {
             missileTex = texture;
-            posX = (int)location.X;
-            posY = (int)location.Y;
-            missileRect = new Rectangle(posX, posY, 28, 50);
+            posX = location.X;
+            posY = location.Y;
+            missileRect = new Rectangle((int)posX, (int)posY, 28, 50);
             missileCenter = new Vector2(missileRect.X + missileRect.Width / 2,
                                         missileRect.Y + missileRect.Height / 2);
             this.heading = heading;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-
+            posX += 5 * Math.Cos(heading-90);
+            posY += 5 * Math.Sin(heading-90);
+            missileCenter = new Vector2((int)posX + missileRect.Width / 2,
+                                        (int)posY + missileRect.Height / 2);
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Draw(missileTex, missileCenter, null, Color.White,
                 (float)heading,
-                new Vector2(missileTex.Width/2, missileTex.Height/2), 0.2f,
+                new Vector2(missileTex.Width / 2, missileTex.Height / 2), 0.2f,
                 SpriteEffects.None, 0);
+        }
+
+        public Vector2 Location
+        {
+            get
+            {
+                return missileCenter;
+            }
         }
     }
 }
