@@ -22,3 +22,11 @@ C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\obj\x86\Debu
 C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\obj\x86\Debug\Popper.exe
 C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\obj\x86\Debug\Popper.pdb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\unpopped.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\popped.xnb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Popper.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Popper.pdb
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\obj\x86\Debug\Popper.csprojResolveAssemblyReference.cache
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\obj\x86\Debug\Popper.exe
+C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\obj\x86\Debug\Popper.pdb

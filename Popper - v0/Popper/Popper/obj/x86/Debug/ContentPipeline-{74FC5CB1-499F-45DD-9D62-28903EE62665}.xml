@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\unpopped.xnb</Output>
-      <Time>2015-10-20T20:24:36-05:00</Time>
+      <Output>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\unpopped.xnb</Output>
+      <Time>2018-01-20T16:24:17.8362009-06:00</Time>
     </Item>
     <Item>
       <Source>popped.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\popped.xnb</Output>
-      <Time>2015-10-20T20:24:42-05:00</Time>
+      <Output>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\popped.xnb</Output>
+      <Time>2018-01-20T16:24:17.8342003-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -26,10 +26,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\PopperContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\145371\Desktop\Video Game Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\PopperContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Temp Admin\Desktop\GitHubProjects\Video-Game-Design\Popper - v0\Popper\Popper\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -57,8 +57,8 @@
         <Value>2011-09-01T16:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-12-22T20:45:43.2525842-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

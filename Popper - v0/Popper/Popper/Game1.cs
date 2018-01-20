@@ -22,6 +22,7 @@ namespace Popper
         Rectangle window;
         Texture2D unpoppedTex;
         Texture2D poppedTex;
+        Random rnd;
 
         List<Rectangle> kernels;
         List<Vector2> velocities;
@@ -47,6 +48,7 @@ namespace Popper
             int screenWidth = graphics.GraphicsDevice.Viewport.Width;
             int screenHeight = graphics.GraphicsDevice.Viewport.Height;
             window = new Rectangle(0, 0, screenWidth, screenHeight);
+            rnd = new Random();
 
             kernels = new List<Rectangle>();
             velocities = new List<Vector2>();
@@ -55,10 +57,12 @@ namespace Popper
 
             kernels.Add(new Rectangle(70, 50, 15, 15));
             velocities.Add(new Vector2(2, 3));
+            images.Add(unpoppedTex);
             timers.Add(0);
 
             kernels.Add(new Rectangle(70, 110, 15, 15));
             velocities.Add(new Vector2(2, 3));
+            images.Add(unpoppedTex);
             timers.Add(0);
 
 
@@ -77,9 +81,6 @@ namespace Popper
             // TODO: use this.Content to load your game content here
             unpoppedTex = Content.Load<Texture2D>("unpopped");
             poppedTex = Content.Load<Texture2D>("popped");
-
-            images.Add(unpoppedTex);
-            images.Add(unpoppedTex);
         }
 
         /// <summary>
@@ -102,6 +103,23 @@ namespace Popper
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+
+            if (gameTime.ElapsedGameTime.Seconds % 3 == 0)
+            {
+                //kernels.Add(new Rectangle(rnd.Next(0, window.Width - 15), rnd.Next(0, window.Height - 15), 15, 15));
+                //velocities.Add(new Vector2(rnd.Next(-3, 4), rnd.Next(-3, 4)));
+                //images.Add(unpoppedTex);
+                //timers.Add(0);
+                kernels.Add(new Rectangle(70, 50, 15, 15));
+                velocities.Add(new Vector2(2, 3));
+                images.Add(unpoppedTex);
+                timers.Add(0);
+
+                kernels.Add(new Rectangle(70, 110, 15, 15));
+                velocities.Add(new Vector2(2, 3));
+                images.Add(unpoppedTex);
+                timers.Add(0);
+            }
 
             for (int i=0; i < kernels.Count; i++)
             {
@@ -149,7 +167,9 @@ namespace Popper
             }
             for (int i = 0; i < kernels.Count; i++)
             {
-                timers[i]--;
+                if (images[i] == poppedTex)
+                    timers[i]--;
+                
                 if (timers[i] == 0 && images[i] == poppedTex)
                 {
                     kernels.RemoveAt(i);
@@ -172,7 +192,6 @@ namespace Popper
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-
             for (int i = 0; i < kernels.Count; i++)
             {
                 spriteBatch.Draw(images[i], kernels[i], Color.White);
