@@ -28,6 +28,8 @@ namespace Popper
         List<Vector2> velocities;
         List<Texture2D> images;
         List<int> timers;
+
+        double nextSpawn = 0.0;
         
         public Game1()
         {
@@ -55,17 +57,6 @@ namespace Popper
             images = new List<Texture2D>();
             timers = new List<int>();
 
-            kernels.Add(new Rectangle(70, 50, 15, 15));
-            velocities.Add(new Vector2(2, 3));
-            images.Add(unpoppedTex);
-            timers.Add(0);
-
-            kernels.Add(new Rectangle(70, 110, 15, 15));
-            velocities.Add(new Vector2(2, 3));
-            images.Add(unpoppedTex);
-            timers.Add(0);
-
-
             base.Initialize();
         }
 
@@ -81,6 +72,11 @@ namespace Popper
             // TODO: use this.Content to load your game content here
             unpoppedTex = Content.Load<Texture2D>("unpopped");
             poppedTex = Content.Load<Texture2D>("popped");
+        }
+
+        private void LoadPopTexture()
+        {
+            images.Add(unpoppedTex);
         }
 
         /// <summary>
@@ -104,21 +100,14 @@ namespace Popper
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            if (gameTime.ElapsedGameTime.Seconds % 3 == 0)
+            if (gameTime.TotalGameTime.TotalSeconds % 3.0 <= (nextSpawn + 0.1) &&
+                gameTime.TotalGameTime.TotalSeconds % 3.0 >= (nextSpawn - 0.1))
             {
-                //kernels.Add(new Rectangle(rnd.Next(0, window.Width - 15), rnd.Next(0, window.Height - 15), 15, 15));
-                //velocities.Add(new Vector2(rnd.Next(-3, 4), rnd.Next(-3, 4)));
-                //images.Add(unpoppedTex);
-                //timers.Add(0);
-                kernels.Add(new Rectangle(70, 50, 15, 15));
-                velocities.Add(new Vector2(2, 3));
-                images.Add(unpoppedTex);
+                kernels.Add(new Rectangle(rnd.Next(window.Width - 14), rnd.Next(window.Height - 14), 15, 15));
+                velocities.Add(new Vector2(rnd.Next(-3, 4), rnd.Next(-3, 4)));
+                LoadPopTexture();
                 timers.Add(0);
-
-                kernels.Add(new Rectangle(70, 110, 15, 15));
-                velocities.Add(new Vector2(2, 3));
-                images.Add(unpoppedTex);
-                timers.Add(0);
+                nextSpawn = rnd.NextDouble();
             }
 
             for (int i=0; i < kernels.Count; i++)
@@ -136,26 +125,15 @@ namespace Popper
                 {
                     velocities[i] = new Vector2(velocities[i].X * -1, velocities[i].Y);
                 }
-                for (int j = 0;j < kernels.Count;j++)
+
+                for (int j = 0; j < kernels.Count; j++)
                 {
                     if (j != i)
                     {
-                        if (kernels[i].Top == kernels[j].Bottom ||
-                            kernels[i].Bottom == kernels[j].Top)
+                        if (kernels[i].Intersects(kernels[j]))
                         {
-                            velocities[i] = new Vector2(velocities[i].X, velocities[i].Y * -1);
-                            velocities[j] = new Vector2(velocities[j].X, velocities[j].Y * -1);
-                            if (timers[i] == 0)
-                                timers[i] = 45;
-                            if (timers[j] == 0)
-                                timers[j] = 45;
-                            images[i] = images[j] = poppedTex;
-                        }
-                        if (kernels[i].Left == kernels[j].Right ||
-                            kernels[i].Right == kernels[j].Left)
-                        {
-                            velocities[i] = new Vector2(velocities[i].X * -1, velocities[i].Y);
-                            velocities[j] = new Vector2(velocities[j].X * -1, velocities[j].Y);
+                            velocities[i] = new Vector2(velocities[i].X * -1, velocities[i].Y * -1);
+                            velocities[j] = new Vector2(velocities[j].X * -1, velocities[j].Y * -1);
                             if (timers[i] == 0)
                                 timers[i] = 45;
                             if (timers[j] == 0)
@@ -169,7 +147,7 @@ namespace Popper
             {
                 if (images[i] == poppedTex)
                     timers[i]--;
-                
+
                 if (timers[i] == 0 && images[i] == poppedTex)
                 {
                     kernels.RemoveAt(i);
