@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tron", "Tron\Tron\Tron.csproj", "{FEEC3BF0-0086-44DD-AA56-F8DCEDE92698}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TronContent", "Tron\TronContent\TronContent.contentproj", "{46832FB1-504A-4737-B10E-7800DF6EAB62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEC3BF0-0086-44DD-AA56-F8DCEDE92698}.Debug|x86.ActiveCfg = Debug|x86
+		{FEEC3BF0-0086-44DD-AA56-F8DCEDE92698}.Debug|x86.Build.0 = Debug|x86
+		{FEEC3BF0-0086-44DD-AA56-F8DCEDE92698}.Release|x86.ActiveCfg = Release|x86
+		{FEEC3BF0-0086-44DD-AA56-F8DCEDE92698}.Release|x86.Build.0 = Release|x86
+		{46832FB1-504A-4737-B10E-7800DF6EAB62}.Debug|x86.ActiveCfg = Debug|x86
+		{46832FB1-504A-4737-B10E-7800DF6EAB62}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
