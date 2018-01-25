@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -18,11 +19,18 @@ namespace Tron
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteFont titleFont;
+        SpriteFont subtextFont;
 
         Texture2D whiteBox;
 
         Rectangle player1;
         Rectangle player2;
+
+        GameState gameState;
+        Vector2 screen;
+
+        int timer;
 
         public Game1()
         {
@@ -38,8 +46,14 @@ namespace Tron
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
 
+            screen = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            gameState = GameState.MAIN_MENU;
+
+            timer = 3;
+            
             base.Initialize();
         }
 
@@ -53,6 +67,10 @@ namespace Tron
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            whiteBox = this.Content.Load<Texture2D>("White");
+
+            titleFont = this.Content.Load<SpriteFont>("Title");
+            subtextFont = this.Content.Load<SpriteFont>("Subtext");
         }
 
         /// <summary>
@@ -69,13 +87,36 @@ namespace Tron
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        Stopwatch stopwtch = new Stopwatch();
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
+                Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
+            switch (gameState)
+            {
+                case GameState.MAIN_MENU:
+                    if (Keyboard.GetState().IsKeyDown(Keys.P))
+                    {
+                        stopwtch.Start();
+                        gameState = GameState.GAME_PLAY;
+                    }
+                    break;
+                case GameState.GAME_PLAY:
+                    timer = 3 - stopwtch.Elapsed.Seconds;
+                    if (timer == 0)
+                    {
+                        timer = -1;
+                        stopwtch.Stop();
+
+                    }
+                    break;
+                default:
+                    break;
+            }
 
             base.Update(gameTime);
         }
@@ -86,10 +127,25 @@ namespace Tron
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
-
+            switch (gameState)
+            {
+                case GameState.MAIN_MENU:
+                    spriteBatch.DrawString(titleFont, "Tron", new Vector2(screen.X/2 - titleFont.MeasureString("Tron").X/2, 50), Color.White);
+                    spriteBatch.DrawString(subtextFont, "Play(P)", new Vector2(screen.X / 2 - subtextFont.MeasureString("Play(P)").X / 2, 200), Color.White);
+                    break;
+                case GameState.GAME_PLAY:
+                    String timerStr = "" + timer;
+                    if (timerStr.Equals("-1"))
+                        timerStr = "GO!";
+                    spriteBatch.DrawString(titleFont, timerStr, new Vector2(screen.X / 2 - titleFont.MeasureString(timerStr).X / 2, screen.Y / 2 - titleFont.MeasureString(timerStr).Y / 2), Color.White);
+                    break;
+                default:
+                    break;
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
