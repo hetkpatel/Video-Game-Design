@@ -19,18 +19,27 @@ namespace Tron
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        SpriteFont titleFont;
-        SpriteFont subtextFont;
+        SpriteFont titleFont, subtextFont;
+        Stopwatch stopwtch = new Stopwatch();
 
         Texture2D whiteBox;
 
-        Rectangle player1;
-        Rectangle player2;
+        Rectangle player1, player2;
+        List<Rectangle> player1Trail, player2Trail;
+        Vector2 player1Pos, player2Pos;
 
         GameState gameState;
+        MoveDirection player1Dir, player2Dir;
         Vector2 screen;
 
         int timer;
+
+        Color player1Color = Color.DarkBlue,
+            player2Color = Color.DarkRed,
+            player1TrailColor = Color.Blue;
+            //player2TrailColor = Color.White;
+
+        const int SPEED = 1;
 
         public Game1()
         {
@@ -48,10 +57,10 @@ namespace Tron
         {
             this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
-
             screen = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            gameState = GameState.MAIN_MENU;
+            player1Trail = player2Trail = new List<Rectangle>();
 
+            gameState = GameState.MAIN_MENU;
             timer = 3;
             
             base.Initialize();
@@ -87,9 +96,9 @@ namespace Tron
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        Stopwatch stopwtch = new Stopwatch();
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -99,19 +108,105 @@ namespace Tron
             switch (gameState)
             {
                 case GameState.MAIN_MENU:
-                    if (Keyboard.GetState().IsKeyDown(Keys.P))
+                    if (kb.IsKeyDown(Keys.P))
                     {
                         stopwtch.Start();
-                        gameState = GameState.GAME_PLAY;
+                        gameState = GameState.COUNT_DOWN;
                     }
                     break;
-                case GameState.GAME_PLAY:
+                case GameState.COUNT_DOWN:
                     timer = 3 - stopwtch.Elapsed.Seconds;
-                    if (timer == 0)
+                    if (timer == -1)
                     {
-                        timer = -1;
                         stopwtch.Stop();
+                        gameState = GameState.SET_GAME;
+                    }
+                    break;
+                case GameState.SET_GAME:
+                    player1Pos = new Vector2(0, 200);
+                    player2Pos = new Vector2(screen.X - 16, 200);
+                    setPlayerRectangles();
+                    player1Dir = MoveDirection.RIGHT;
+                    player2Dir = MoveDirection.LEFT;
+                    gameState = GameState.GAME_PLAY;
+                    break;
+                case GameState.GAME_PLAY:
+                    if (kb.IsKeyDown(Keys.Up))
+                        if (player1Dir != MoveDirection.DOWN)
+                            player1Dir = MoveDirection.UP;
+                    if (kb.IsKeyDown(Keys.Down))
+                        if (player1Dir != MoveDirection.UP)
+                            player1Dir = MoveDirection.DOWN;
+                    if (kb.IsKeyDown(Keys.Left))
+                        if (player1Dir != MoveDirection.RIGHT)
+                            player1Dir = MoveDirection.LEFT;
+                    if (kb.IsKeyDown(Keys.Right))
+                        if (player1Dir != MoveDirection.LEFT)
+                            player1Dir = MoveDirection.RIGHT;
 
+                    switch (player1Dir)
+                    {
+                        case MoveDirection.UP:
+                            player1Pos = new Vector2(player1Pos.X, player1Pos.Y - SPEED);
+                            break;
+                        case MoveDirection.DOWN:
+                            player1Pos = new Vector2(player1Pos.X, player1Pos.Y + SPEED);
+                            break;
+                        case MoveDirection.LEFT:
+                            player1Pos = new Vector2(player1Pos.X - SPEED, player1Pos.Y);
+                            break;
+                        case MoveDirection.RIGHT:
+                            player1Pos = new Vector2(player1Pos.X + SPEED, player1Pos.Y);
+                            break;
+                    }
+
+                    if (kb.IsKeyDown(Keys.W))
+                        if (player2Dir != MoveDirection.DOWN)
+                            player2Dir = MoveDirection.UP;
+                    if (kb.IsKeyDown(Keys.S))
+                        if (player2Dir != MoveDirection.UP)
+                            player2Dir = MoveDirection.DOWN;
+                    if (kb.IsKeyDown(Keys.A))
+                        if (player2Dir != MoveDirection.RIGHT)
+                            player2Dir = MoveDirection.LEFT;
+                    if (kb.IsKeyDown(Keys.D))
+                        if (player2Dir != MoveDirection.LEFT)
+                            player2Dir = MoveDirection.RIGHT;
+
+                    switch (player2Dir)
+                    {
+                        case MoveDirection.UP:
+                            player2Pos = new Vector2(player2Pos.X, player2Pos.Y - SPEED);
+                            break;
+                        case MoveDirection.DOWN:
+                            player2Pos = new Vector2(player2Pos.X, player2Pos.Y + SPEED);
+                            break;
+                        case MoveDirection.LEFT:
+                            player2Pos = new Vector2(player2Pos.X - SPEED, player2Pos.Y);
+                            break;
+                        case MoveDirection.RIGHT:
+                            player2Pos = new Vector2(player2Pos.X + SPEED, player2Pos.Y);
+                            break;
+                    }
+                    setPlayerRectangles();
+
+                    if (player1.Top <= -5 || player1.Bottom >= screen.Y + 5 ||
+                        player1.Left <= -5 || player1.Right >= screen.X + 5 ||
+                        player2.Top <= -5 || player2.Bottom >= screen.Y + 5 ||
+                        player2.Left <= -5 || player2.Right >= screen.X + 5 ||
+                        player1.Intersects(player2) || player2.Intersects(player1))
+                        gameState = GameState.GAME_OVER;
+                    break;
+                case GameState.GAME_OVER:
+                    if (kb.IsKeyDown(Keys.P))
+                    {
+                        stopwtch.Reset();
+                        stopwtch.Start();
+                        gameState = GameState.COUNT_DOWN;
+                    }
+                    else if (kb.IsKeyDown(Keys.Q))
+                    {
+                        this.Exit();
                     }
                     break;
                 default:
@@ -119,6 +214,14 @@ namespace Tron
             }
 
             base.Update(gameTime);
+        }
+
+        private void setPlayerRectangles()
+        {
+            player1 = new Rectangle((int)player1Pos.X, (int)player1Pos.Y, 16, 16);
+            player1Trail.Add(player1);
+            player2 = new Rectangle((int)player2Pos.X, (int)player2Pos.Y, 16, 16);
+            player2Trail.Add(player2);
         }
 
         /// <summary>
@@ -136,11 +239,28 @@ namespace Tron
                     spriteBatch.DrawString(titleFont, "Tron", new Vector2(screen.X/2 - titleFont.MeasureString("Tron").X/2, 50), Color.White);
                     spriteBatch.DrawString(subtextFont, "Play(P)", new Vector2(screen.X / 2 - subtextFont.MeasureString("Play(P)").X / 2, 200), Color.White);
                     break;
-                case GameState.GAME_PLAY:
+                case GameState.COUNT_DOWN:
                     String timerStr = "" + timer;
-                    if (timerStr.Equals("-1"))
+                    if (timerStr.Equals("0"))
                         timerStr = "GO!";
                     spriteBatch.DrawString(titleFont, timerStr, new Vector2(screen.X / 2 - titleFont.MeasureString(timerStr).X / 2, screen.Y / 2 - titleFont.MeasureString(timerStr).Y / 2), Color.White);
+                    break;
+                case GameState.GAME_PLAY:
+                    foreach (Rectangle rect in player1Trail)
+                    {
+                        spriteBatch.Draw(whiteBox, rect, player1Color);
+                    }
+                    foreach (Rectangle rect in player2Trail)
+                    {
+                        spriteBatch.Draw(whiteBox, rect, player2Color);
+                    }
+                    spriteBatch.Draw(whiteBox, player1, player1Color);
+                    spriteBatch.Draw(whiteBox, player2, player2Color);
+                    break;
+                case GameState.GAME_OVER:
+                    spriteBatch.DrawString(titleFont, "Game Over", new Vector2(screen.X / 2 - titleFont.MeasureString("Game Over").X / 2, 50), Color.White);
+                    spriteBatch.DrawString(subtextFont, "Play Again(P)", new Vector2((screen.X / 2 - subtextFont.MeasureString("Play Again(P)").X / 2) - 100, 200), Color.White);
+                    spriteBatch.DrawString(subtextFont, "Quit(Q)", new Vector2((screen.X / 2 - subtextFont.MeasureString("Quit(Q)").X / 2) + 100, 200), Color.White);
                     break;
                 default:
                     break;

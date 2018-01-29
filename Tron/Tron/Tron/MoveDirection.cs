@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Tron
 {
-    public enum GameState
+    public enum MoveDirection
     {
-        MAIN_MENU,
-        COUNT_DOWN,
-        SET_GAME,
-        GAME_PLAY,
-        GAME_OVER
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
     }
 }
