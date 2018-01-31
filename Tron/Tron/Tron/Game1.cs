@@ -34,10 +34,8 @@ namespace Tron
 
         int timer;
 
-        Color player1Color = Color.DarkBlue,
-            player2Color = Color.DarkRed,
-            player1TrailColor = Color.Blue;
-            //player2TrailColor = Color.White;
+        Color player1Color = new Color(53, 204, 151),
+            player2Color = new Color(255, 102, 252);
 
         const int SPEED = 1;
 
@@ -123,8 +121,10 @@ namespace Tron
                     }
                     break;
                 case GameState.SET_GAME:
-                    player1Pos = new Vector2(0, 200);
-                    player2Pos = new Vector2(screen.X - 16, 200);
+                    Random rnd = new Random();
+                    int height = rnd.Next(0, (int)screen.Y-15);
+                    player1Pos = new Vector2(0, height);
+                    player2Pos = new Vector2(screen.X - 16, height);
                     setPlayerRectangles();
                     player1Dir = MoveDirection.RIGHT;
                     player2Dir = MoveDirection.LEFT;
@@ -219,8 +219,8 @@ namespace Tron
         private void setPlayerRectangles()
         {
             player1 = new Rectangle((int)player1Pos.X, (int)player1Pos.Y, 16, 16);
-            player1Trail.Add(player1);
             player2 = new Rectangle((int)player2Pos.X, (int)player2Pos.Y, 16, 16);
+            player1Trail.Add(player1);
             player2Trail.Add(player2);
         }
 
@@ -252,7 +252,7 @@ namespace Tron
                     }
                     foreach (Rectangle rect in player2Trail)
                     {
-                        spriteBatch.Draw(whiteBox, rect, player2Color);
+                        spriteBatch.Draw(whiteBox, rect, player1Color);
                     }
                     spriteBatch.Draw(whiteBox, player1, player1Color);
                     spriteBatch.Draw(whiteBox, player2, player2Color);
