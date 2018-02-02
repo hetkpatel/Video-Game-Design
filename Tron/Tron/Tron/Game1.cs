@@ -33,11 +33,12 @@ namespace Tron
         Vector2 screen;
 
         int timer;
+        String playerWon;
 
         Color player1Color = new Color(53, 204, 151),
             player2Color = new Color(255, 102, 252);
 
-        const int SPEED = 1;
+        const int SPEED = 5;
 
         public Game1()
         {
@@ -54,9 +55,11 @@ namespace Tron
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
+            
             // TODO: Add your initialization logic here
             screen = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            player1Trail = player2Trail = new List<Rectangle>();
+            player1Trail = new List<Rectangle>();
+            player2Trail = new List<Rectangle>();
 
             gameState = GameState.MAIN_MENU;
             timer = 3;
@@ -123,11 +126,11 @@ namespace Tron
                 case GameState.SET_GAME:
                     Random rnd = new Random();
                     int height = rnd.Next(0, (int)screen.Y-15);
-                    player1Pos = new Vector2(0, height);
-                    player2Pos = new Vector2(screen.X - 16, height);
+                    player1Pos = new Vector2(screen.X - 16, height);
+                    player2Pos = new Vector2(0, height);
                     setPlayerRectangles();
-                    player1Dir = MoveDirection.RIGHT;
-                    player2Dir = MoveDirection.LEFT;
+                    player1Dir = MoveDirection.LEFT;
+                    player2Dir = MoveDirection.RIGHT;
                     gameState = GameState.GAME_PLAY;
                     break;
                 case GameState.GAME_PLAY:
@@ -191,11 +194,53 @@ namespace Tron
                     setPlayerRectangles();
 
                     if (player1.Top <= -5 || player1.Bottom >= screen.Y + 5 ||
-                        player1.Left <= -5 || player1.Right >= screen.X + 5 ||
-                        player2.Top <= -5 || player2.Bottom >= screen.Y + 5 ||
-                        player2.Left <= -5 || player2.Right >= screen.X + 5 ||
-                        player1.Intersects(player2) || player2.Intersects(player1))
+                        player1.Left <= -5 || player1.Right >= screen.X + 5)
+                    {
+                        playerWon = "2";
                         gameState = GameState.GAME_OVER;
+                    }
+
+                    if (player2.Top <= -5 || player2.Bottom >= screen.Y + 5 ||
+                        player2.Left <= -5 || player2.Right >= screen.X + 5)
+                    {
+                        playerWon = "1";
+                        gameState = GameState.GAME_OVER;
+                    }
+
+                    if (player1.Intersects(player2) || player2.Intersects(player1))
+                    {
+                        playerWon = "N/A";
+                        gameState = GameState.GAME_OVER;
+                    }
+
+
+                    for (int i = 0;i < player1Trail.Count-20;i++)
+                    {
+                        if (player1.Intersects(player1Trail[i]))
+                        {
+                            playerWon = "2";
+                            gameState = GameState.GAME_OVER;
+                        }
+                        if (player2.Intersects(player1Trail[i]))
+                        {
+                            playerWon = "1";
+                            gameState = GameState.GAME_OVER;
+                        }
+                    }
+
+                    for (int i = 0; i < player2Trail.Count - 20; i++)
+                    {
+                        if (player1.Intersects(player2Trail[i]))
+                        {
+                            playerWon = "2";
+                            gameState = GameState.GAME_OVER;
+                        }
+                        if (player2.Intersects(player2Trail[i]))
+                        {
+                            playerWon = "1";
+                            gameState = GameState.GAME_OVER;
+                        }
+                    }
                     break;
                 case GameState.GAME_OVER:
                     if (kb.IsKeyDown(Keys.P))
@@ -252,15 +297,19 @@ namespace Tron
                     }
                     foreach (Rectangle rect in player2Trail)
                     {
-                        spriteBatch.Draw(whiteBox, rect, player1Color);
+                        spriteBatch.Draw(whiteBox, rect, player2Color);
                     }
                     spriteBatch.Draw(whiteBox, player1, player1Color);
                     spriteBatch.Draw(whiteBox, player2, player2Color);
                     break;
                 case GameState.GAME_OVER:
                     spriteBatch.DrawString(titleFont, "Game Over", new Vector2(screen.X / 2 - titleFont.MeasureString("Game Over").X / 2, 50), Color.White);
+                    if (playerWon != "N/A")
+                        spriteBatch.DrawString(subtextFont, "Player " + playerWon + " wins.", new Vector2((screen.X / 2 - subtextFont.MeasureString("Player " + playerWon + " wins.").X / 2), 175), Color.White);
                     spriteBatch.DrawString(subtextFont, "Play Again(P)", new Vector2((screen.X / 2 - subtextFont.MeasureString("Play Again(P)").X / 2) - 100, 200), Color.White);
                     spriteBatch.DrawString(subtextFont, "Quit(Q)", new Vector2((screen.X / 2 - subtextFont.MeasureString("Quit(Q)").X / 2) + 100, 200), Color.White);
+                    player1Trail.Clear();
+                    player2Trail.Clear();
                     break;
                 default:
                     break;
