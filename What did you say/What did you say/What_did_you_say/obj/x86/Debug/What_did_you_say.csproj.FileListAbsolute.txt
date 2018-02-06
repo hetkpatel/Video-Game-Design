@@ -1,0 +1,18 @@
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Content\5.2 Data File.txt
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\What_did_you_say.exe
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\What_did_you_say.pdb
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\obj\x86\Debug\What_did_you_say.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\obj\x86\Debug\What_did_you_say.exe
+C:\Users\145371\Desktop\Video Game Design\What did you say\What did you say\What_did_you_say\obj\x86\Debug\What_did_you_say.pdb
