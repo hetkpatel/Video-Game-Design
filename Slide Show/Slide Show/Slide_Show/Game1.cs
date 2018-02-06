@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.IO;
 
-namespace What_did_you_say
+namespace Slide_Show
 {
     /// <summary>
     /// This is the main type for your game
@@ -20,8 +20,13 @@ namespace What_did_you_say
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        SpriteFont sf;
-        List<string> lines;
+        int current;
+        List<Rectangle> rects;
+        Texture2D spriteSheet;
+        Rectangle screenRct;
+        Rectangle window;
+
+        int time;
 
         public Game1()
         {
@@ -38,7 +43,12 @@ namespace What_did_you_say
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            lines = new List<string>();
+            int screenWidth = graphics.GraphicsDevice.Viewport.Width;
+            int screenHeight = graphics.GraphicsDevice.Viewport.Height;
+            window = new Rectangle(0, 0, screenWidth, screenHeight);
+            current = 0;
+            time = 0;
+            rects = new List<Rectangle>();
 
             base.Initialize();
         }
@@ -53,12 +63,12 @@ namespace What_did_you_say
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            sf = this.Content.Load<SpriteFont>("SpriteFont1");
+            spriteSheet = this.Content.Load<Texture2D>("sprite sheet");
 
-            ReadFileAsString(@"Content/5.2 Data File.txt");
+            ReadFileAsInteger(@"Content/rectangle data.txt");
         }
 
-        private void ReadFileAsString(string path)
+        private void ReadFileAsInteger(string path)
         {
             try
             {
@@ -67,7 +77,10 @@ namespace What_did_you_say
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
-                        lines.Add(line);
+                        string[] parts = line.Split(' ');
+                        rects.Add(new Rectangle(Convert.ToInt32(parts[0]),
+                            Convert.ToInt32(parts[1]), Convert.ToInt32(parts[2]),
+                            Convert.ToInt32(parts[3])));
                     }
                 }
             }
@@ -100,6 +113,22 @@ namespace What_did_you_say
                 this.Exit();
 
             // TODO: Add your update logic here
+            //time++;
+            //if (time / 60 == 2)
+            //{
+            //    current++;
+            //    time = 0;
+            //}
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                current++;
+            }
+
+            if (current == rects.Count)
+                current = 0;
+
+            screenRct = new Rectangle((window.Width / 2) - (rects[current].Width / 2),
+                (window.Height / 2) - (rects[current].Height / 2), rects[current].Width, rects[current].Height);
 
             base.Update(gameTime);
         }
@@ -113,19 +142,9 @@ namespace What_did_you_say
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            DrawText();
+            spriteBatch.Draw(spriteSheet, screenRct, rects[current], Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
-        }
-
-        private void DrawText()
-        {
-            Vector2 position = new Vector2(50, 10);
-            for (int i = 0;i < lines.Count;i+=2)
-            {
-                spriteBatch.DrawString(sf, lines[i] + " " + lines[i+1], position, Color.Black);
-                position.Y += 30;
-            }
         }
     }
 }
