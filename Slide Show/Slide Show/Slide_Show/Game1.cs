@@ -113,15 +113,11 @@ namespace Slide_Show
                 this.Exit();
 
             // TODO: Add your update logic here
-            //time++;
-            //if (time / 60 == 2)
-            //{
-            //    current++;
-            //    time = 0;
-            //}
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            time++;
+            if (time / 60 == 2)
             {
                 current++;
+                time = 0;
             }
 
             if (current == rects.Count)
@@ -139,7 +135,7 @@ namespace Slide_Show
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.White);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
             spriteBatch.Draw(spriteSheet, screenRct, rects[current], Color.White);
