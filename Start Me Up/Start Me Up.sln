@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Start_Me_Up", "Start Me Up\Start_Me_Up\Start_Me_Up.csproj", "{4A71019E-371D-495D-9512-7C21738ACF98}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Start_Me_UpContent", "Start Me Up\Start_Me_UpContent\Start_Me_UpContent.contentproj", "{858B2DAC-13C7-49F4-946E-E34F4AE4DC3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A71019E-371D-495D-9512-7C21738ACF98}.Debug|x86.ActiveCfg = Debug|x86
+		{4A71019E-371D-495D-9512-7C21738ACF98}.Debug|x86.Build.0 = Debug|x86
+		{4A71019E-371D-495D-9512-7C21738ACF98}.Release|x86.ActiveCfg = Release|x86
+		{4A71019E-371D-495D-9512-7C21738ACF98}.Release|x86.Build.0 = Release|x86
+		{858B2DAC-13C7-49F4-946E-E34F4AE4DC3B}.Debug|x86.ActiveCfg = Debug|x86
+		{858B2DAC-13C7-49F4-946E-E34F4AE4DC3B}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
