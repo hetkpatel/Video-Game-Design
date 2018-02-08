@@ -1,0 +1,18 @@
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Content\Black Square Checkers.xnb
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Content\Red Square Checkers.xnb
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Checkerboard.exe
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Checkerboard.pdb
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\obj\x86\Debug\Checkerboard.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\obj\x86\Debug\Checkerboard.exe
+C:\Users\145371\Desktop\Video Game Design\Checkerboard\Checkerboard\Checkerboard\obj\x86\Debug\Checkerboard.pdb

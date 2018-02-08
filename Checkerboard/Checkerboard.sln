@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkerboard", "Checkerboard\Checkerboard\Checkerboard.csproj", "{D5288B6A-3244-4CE0-BE95-C70B1C7FD277}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CheckerboardContent", "Checkerboard\CheckerboardContent\CheckerboardContent.contentproj", "{3EA8FFF4-E06A-4271-8D89-2DA1A22F956C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5288B6A-3244-4CE0-BE95-C70B1C7FD277}.Debug|x86.ActiveCfg = Debug|x86
+		{D5288B6A-3244-4CE0-BE95-C70B1C7FD277}.Debug|x86.Build.0 = Debug|x86
+		{D5288B6A-3244-4CE0-BE95-C70B1C7FD277}.Release|x86.ActiveCfg = Release|x86
+		{D5288B6A-3244-4CE0-BE95-C70B1C7FD277}.Release|x86.Build.0 = Release|x86
+		{3EA8FFF4-E06A-4271-8D89-2DA1A22F956C}.Debug|x86.ActiveCfg = Debug|x86
+		{3EA8FFF4-E06A-4271-8D89-2DA1A22F956C}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
