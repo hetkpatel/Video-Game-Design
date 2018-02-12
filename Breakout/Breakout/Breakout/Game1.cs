@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
 
 namespace Breakout
 {
@@ -20,6 +21,11 @@ namespace Breakout
         SpriteBatch spriteBatch;
 
         Texture2D brick;
+
+        string[,] strgrid;
+
+        readonly int[] GRID_SIZE = { 25, 9 };
+        readonly int[] BLOCK_SIZE = { 10, 5 };
 
         public Game1()
         {
@@ -35,6 +41,7 @@ namespace Breakout
         /// </summary>
         protected override void Initialize()
         {
+            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -51,6 +58,34 @@ namespace Breakout
 
             // TODO: use this.Content to load your game content here
             brick = this.Content.Load<Texture2D>("White");
+
+            ReadFileAsString(@"Content/level1.txt");
+        }
+
+        private void ReadFileAsString(string path)
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    int x = 0;
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        char[] chrArr = line.ToCharArray();
+                        for (int y = 0; y < chrArr.Length;y++)
+                        {
+                            strgrid[x, y] = chrArr[y].ToString();
+                        }
+                        x++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
         }
 
         /// <summary>
@@ -85,9 +120,15 @@ namespace Breakout
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            for (int x = 0; x < GRID_SIZE[0]; x++)
+                for (int y = 0; y < GRID_SIZE[1]; y++)
+                {
+                    if (strgrid[y, x] == ".")
+                        spriteBatch.Draw(brick, gameGrid[x, y], Color.Blue);
+                }
 
             base.Draw(gameTime);
         }
