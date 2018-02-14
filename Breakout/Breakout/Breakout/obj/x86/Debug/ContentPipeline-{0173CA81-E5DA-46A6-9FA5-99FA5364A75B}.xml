@@ -10,6 +10,33 @@
       <Output>C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\White.xnb</Output>
       <Time>2018-02-08T09:52:38.8173882-06:00</Time>
     </Item>
+    <Item>
+      <Source>Ball.png</Source>
+      <Name>Ball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\Ball.xnb</Output>
+      <Time>2018-02-14T09:29:01.3059508-06:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuFont.spritefont</Source>
+      <Name>MenuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\MenuFont.xnb</Output>
+      <Time>2018-02-14T09:44:44.396588-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SubtextFont.spritefont</Source>
+      <Name>SubtextFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\SubtextFont.xnb</Output>
+      <Time>2018-02-14T09:50:54.097188-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{0173CA81-E5DA-46A6-9FA5-99FA5364A75B}</ContentProjectGUID>

@@ -19,18 +19,33 @@ namespace Breakout
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteFont menuFont, subtextFont;
+        Vector2 screen;
+
+        GameState gameState;
 
         Texture2D brick;
 
+        Texture2D ball;
+        Rectangle ballRct, paddleRct;
+        Vector2 ballPosition, ballVelocity;
+        int paddlePosition;
+
+        Brick[,] gameGrid;
         string[,] strgrid;
 
-        readonly int[] GRID_SIZE = { 25, 9 };
-        readonly int[] BLOCK_SIZE = { 10, 5 };
+        readonly int[] GRID_COUNT = { 25, 9 };
+        readonly int[] BLOCK_SIZE = { 50, 25 };
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = GRID_COUNT[0] * BLOCK_SIZE[0];
+            graphics.PreferredBackBufferHeight = GRID_COUNT[1] * BLOCK_SIZE[1] + 500;
+
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -43,6 +58,15 @@ namespace Breakout
         {
             this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
+            screen = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            gameState = GameState.MAIN_MENU;
+            strgrid = new string[GRID_COUNT[0], GRID_COUNT[1]];
+            gameGrid = new Brick[GRID_COUNT[0], GRID_COUNT[1]];
+            ballVelocity = new Vector2(10);
+            ballPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 10, GraphicsDevice.Viewport.Height - 100);
+            ballRct = new Rectangle((int) ballPosition.X, (int) ballPosition.Y, 20, 20);
+            paddlePosition = (GraphicsDevice.Viewport.Width / 2) - BLOCK_SIZE[0];
+            paddleRct = new Rectangle(paddlePosition, GraphicsDevice.Viewport.Height - BLOCK_SIZE[1] - 5, BLOCK_SIZE[0] * 2, BLOCK_SIZE[1]);
 
             base.Initialize();
         }
@@ -57,9 +81,13 @@ namespace Breakout
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            menuFont = this.Content.Load<SpriteFont>("MenuFont");
+            subtextFont = this.Content.Load<SpriteFont>("SubtextFont");
             brick = this.Content.Load<Texture2D>("White");
+            ball = this.Content.Load<Texture2D>("Ball");
 
             ReadFileAsString(@"Content/level1.txt");
+            LoadElements();
         }
 
         private void ReadFileAsString(string path)
@@ -68,16 +96,16 @@ namespace Breakout
             {
                 using (StreamReader reader = new StreamReader(path))
                 {
-                    int x = 0;
                     while (!reader.EndOfStream)
                     {
-                        string line = reader.ReadLine();
-                        char[] chrArr = line.ToCharArray();
-                        for (int y = 0; y < chrArr.Length;y++)
+                        for (int y = 0; y < GRID_COUNT[1]; y++)
                         {
-                            strgrid[x, y] = chrArr[y].ToString();
+                            string line = reader.ReadLine();
+                            for (int x = 0; x < GRID_COUNT[0]; x++)
+                            {
+                                strgrid[x, y] = line.Substring(x, 1);
+                            }
                         }
-                        x++;
                     }
                 }
             }
@@ -85,6 +113,41 @@ namespace Breakout
             {
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        private void LoadElements()
+        {
+            for (int y = 0; y < GRID_COUNT[1]; y++)
+            {
+                for (int x = 0; x < GRID_COUNT[0]; x++)
+                {
+                    // bbb gg rr y rrr oooo
+                    if (strgrid[x, y].ToUpper().Equals("."))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Black, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 0);
+                    }
+                    else if (strgrid[x, y].ToUpper().Equals("B"))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Blue, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 5);
+                    }
+                    else if (strgrid[x, y].ToUpper().Equals("G"))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Green, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 10);
+                    }
+                    else if (strgrid[x, y].ToUpper().Equals("R"))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Red, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 15);
+                    }
+                    else if (strgrid[x, y].ToUpper().Equals("Y"))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Yellow, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 20);
+                    }
+                    else if (strgrid[x, y].ToUpper().Equals("O"))
+                    {
+                        gameGrid[x, y] = new Brick(Color.Orange, new Rectangle(x * BLOCK_SIZE[0], y * BLOCK_SIZE[1], BLOCK_SIZE[0], BLOCK_SIZE[1]), 40);
+                    }
+                }
             }
         }
 
@@ -110,6 +173,43 @@ namespace Breakout
                 this.Exit();
 
             // TODO: Add your update logic here
+            switch (gameState)
+            {
+                case GameState.MAIN_MENU:
+                    if (Keyboard.GetState().IsKeyDown(Keys.P))
+                        gameState = GameState.LEVEL1;
+                    break;
+                case GameState.LEVEL1:
+                    if (!(Keyboard.GetState().GetPressedKeys().Length >= 2))
+                    {
+                        if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                            paddlePosition -= 10;
+                        else if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                            paddlePosition += 10;
+
+                        if ((paddlePosition + (BLOCK_SIZE[0] * 2)) >= GraphicsDevice.Viewport.Width)
+                            paddlePosition = GraphicsDevice.Viewport.Width - (BLOCK_SIZE[0] * 2);
+                        else if (paddlePosition <= 0)
+                        {
+                            paddlePosition = 0;
+                        }
+
+                        ballPosition.X += ballVelocity.X;
+                        ballPosition.Y += ballVelocity.X;
+
+                        if (ballPosition.X >= GraphicsDevice.Viewport.Width ||
+                            ballPosition.X <= 0)
+                            ballVelocity.X *= -1;
+
+                        if (ballPosition.Y >= GraphicsDevice.Viewport.Height ||
+                            ballPosition.Y <= 0)
+                            ballVelocity.Y *= -1;
+
+                        ballRct = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 20, 20);
+                        paddleRct = new Rectangle(paddlePosition, GraphicsDevice.Viewport.Height - BLOCK_SIZE[1] - 5, BLOCK_SIZE[0] * 2, BLOCK_SIZE[1]);
+                    }
+                    break;
+            }
 
             base.Update(gameTime);
         }
@@ -123,13 +223,27 @@ namespace Breakout
             GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
-            for (int x = 0; x < GRID_SIZE[0]; x++)
-                for (int y = 0; y < GRID_SIZE[1]; y++)
-                {
-                    if (strgrid[y, x] == ".")
-                        spriteBatch.Draw(brick, gameGrid[x, y], Color.Blue);
-                }
+            spriteBatch.Begin();
+            switch (gameState)
+            {
+                case GameState.MAIN_MENU:
+                    spriteBatch.DrawString(menuFont, "Breakout", new Vector2(screen.X / 2 - menuFont.MeasureString("Breakout").X / 2, 50), Color.White);
+                    spriteBatch.DrawString(subtextFont, "Play(P)", new Vector2(screen.X / 2 - subtextFont.MeasureString("Play(P)").X / 2, 200), Color.White);
+                    break;
+                case GameState.LEVEL1:
+                    for (int y = 0; y < GRID_COUNT[1]; y++)
+                    {
+                        for (int x = 0; x < GRID_COUNT[0]; x++)
+                        {
+                            spriteBatch.Draw(brick, gameGrid[x, y].GetRect, gameGrid[x, y].GetText);
+                        }
+                    }
 
+                    spriteBatch.Draw(ball, ballRct, Color.White);
+                    spriteBatch.Draw(brick, paddleRct, Color.White);
+                    break;
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

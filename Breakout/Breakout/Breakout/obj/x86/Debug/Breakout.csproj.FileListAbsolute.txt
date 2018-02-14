@@ -16,3 +16,6 @@ C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\obj\x86\Deb
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\obj\x86\Debug\Breakout.exe
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\obj\x86\Debug\Breakout.pdb
+C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\Ball.xnb
+C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\MenuFont.xnb
+C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\SubtextFont.xnb
