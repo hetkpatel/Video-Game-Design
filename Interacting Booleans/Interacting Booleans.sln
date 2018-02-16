@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interacting_Booleans", "Interacting Booleans\Interacting_Booleans\Interacting_Booleans.csproj", "{31952A58-D309-4F56-830D-8D9D34D48AC4}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Interacting_BooleansContent", "Interacting Booleans\Interacting_BooleansContent\Interacting_BooleansContent.contentproj", "{4B2B6FBE-13EF-4FEF-9A77-9E15A1385D43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31952A58-D309-4F56-830D-8D9D34D48AC4}.Debug|x86.ActiveCfg = Debug|x86
+		{31952A58-D309-4F56-830D-8D9D34D48AC4}.Debug|x86.Build.0 = Debug|x86
+		{31952A58-D309-4F56-830D-8D9D34D48AC4}.Release|x86.ActiveCfg = Release|x86
+		{31952A58-D309-4F56-830D-8D9D34D48AC4}.Release|x86.Build.0 = Release|x86
+		{4B2B6FBE-13EF-4FEF-9A77-9E15A1385D43}.Debug|x86.ActiveCfg = Debug|x86
+		{4B2B6FBE-13EF-4FEF-9A77-9E15A1385D43}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
