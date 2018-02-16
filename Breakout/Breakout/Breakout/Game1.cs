@@ -62,7 +62,7 @@ namespace Breakout
             gameState = GameState.MAIN_MENU;
             strgrid = new string[GRID_COUNT[0], GRID_COUNT[1]];
             gameGrid = new Brick[GRID_COUNT[0], GRID_COUNT[1]];
-            ballVelocity = new Vector2(10);
+            ballVelocity = new Vector2(5);
             ballPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 10, GraphicsDevice.Viewport.Height - 100);
             ballRct = new Rectangle((int) ballPosition.X, (int) ballPosition.Y, 20, 20);
             paddlePosition = (GraphicsDevice.Viewport.Width / 2) - BLOCK_SIZE[0];
@@ -195,14 +195,40 @@ namespace Breakout
                         }
 
                         ballPosition.X += ballVelocity.X;
-                        ballPosition.Y += ballVelocity.X;
+                        ballPosition.Y -= ballVelocity.Y;
 
-                        if (ballPosition.X >= GraphicsDevice.Viewport.Width ||
+                        for (int y = 0; y < GRID_COUNT[1]; y++)
+                        {
+                            for (int x = 0; x < GRID_COUNT[0]; x++)
+                            {
+                                if (gameGrid[x, y].GetText != Color.Black) {
+                                    if (ballRct.Intersects(gameGrid[x, y].GetRect))
+                                    {
+                                        //if (ballRct.Top == gameGrid[x, y].GetRect.Bottom || ballRct.Bottom == gameGrid[x, y].GetRect.Top)
+                                        //{
+                                            ballVelocity.Y *= -1;
+                                            // Remove Brick
+                                        //    Console.WriteLine("Ball intersects Brick: Y");
+                                        //}
+                                        //else if (ballRct.Left == gameGrid[x, y].GetRect.Right || ballRct.Right == gameGrid[x, y].GetRect.Left)
+                                        //{
+                                            ballVelocity.X *= -1;
+                                            // Remove Brick
+                                        //    Console.WriteLine("Ball intersects Brick: X");
+                                        //}
+                                        Console.WriteLine("Ball intersects Brick");
+                                    }
+                                }
+                            }
+                        }
+
+                        if (ballPosition.X >= (GraphicsDevice.Viewport.Width - 20) ||
                             ballPosition.X <= 0)
                             ballVelocity.X *= -1;
 
-                        if (ballPosition.Y >= GraphicsDevice.Viewport.Height ||
-                            ballPosition.Y <= 0)
+                        if (ballPosition.Y >= GraphicsDevice.Viewport.Height)
+                            gameState = GameState.QUIT;
+                        else if (ballPosition.Y <= 0 || (ballPosition.Y + 20) == paddleRct.Top)
                             ballVelocity.Y *= -1;
 
                         ballRct = new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 20, 20);
