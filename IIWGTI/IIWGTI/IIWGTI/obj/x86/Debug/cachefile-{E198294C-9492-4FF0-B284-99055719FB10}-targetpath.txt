@@ -1,0 +1,3 @@
+Content\Test Image.xnb
+Content\Test Image - Names.txt
+Content\Test Image - Points.txt
