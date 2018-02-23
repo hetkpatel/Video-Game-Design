@@ -19,3 +19,4 @@ C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\obj\x86\Deb
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\Ball.xnb
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\MenuFont.xnb
 C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\SubtextFont.xnb
+C:\Users\145371\Desktop\Video Game Design\Breakout\Breakout\Breakout\bin\x86\Debug\Content\level2.txt
