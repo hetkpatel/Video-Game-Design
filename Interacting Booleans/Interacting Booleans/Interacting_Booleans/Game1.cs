@@ -18,14 +18,17 @@ namespace Interacting_Booleans
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        Texture2D diving, ducking, jumping, standing;
-        Texture2D playerText;
-        Rectangle playerRct;
-        Vector2 playerPosition;
-
+        Rectangle heroineRect;
+        Texture2D divingText;
+        Texture2D duckingText;
+        Texture2D jumpingText;
+        Texture2D standingText;
+        Texture2D heroineTexture;
         bool isJumping;
-        int startTime;
+        bool isDucking;
+        KeyboardState oldKb = Keyboard.GetState();
+        int jumpVelocity = 10;
+        int yVelocity;
 
         public Game1()
         {
@@ -42,11 +45,7 @@ namespace Interacting_Booleans
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            playerPosition = new Vector2(GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height-100);
-            playerRct = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 68, 100);
-            isJumping = false;
-            startTime = 0;
-
+            heroineRect = new Rectangle(350, 150, 100, 200);
             base.Initialize();
         }
 
@@ -60,10 +59,10 @@ namespace Interacting_Booleans
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            diving = this.Content.Load<Texture2D>("diving");
-            ducking = this.Content.Load<Texture2D>("ducking");
-            jumping = this.Content.Load<Texture2D>("jumping");
-            standing = this.Content.Load<Texture2D>("standing");
+            divingText = Content.Load<Texture2D>("diving");
+            duckingText = Content.Load<Texture2D>("ducking");
+            jumpingText = Content.Load<Texture2D>("jumping");
+            standingText = Content.Load<Texture2D>("standing");
         }
 
         /// <summary>
@@ -83,30 +82,52 @@ namespace Interacting_Booleans
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-                Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-
-            // TODO: Add your update logic here
-            playerText = standing;
-            if (Keyboard.GetState().IsKeyDown(Keys.J))// the “J” key has been pressed
+            KeyboardState kb = Keyboard.GetState();
+            if (kb.IsKeyDown(Keys.J))
+            {
+                if (!isJumping && !isDucking)
+                {
+                    isJumping = true;
+                    yVelocity = jumpVelocity;
+                    heroineTexture = jumpingText;
+                    heroineRect.Y -= 100;
+                }
+            }
+            else if (!(kb.IsKeyDown(Keys.J)))
+            {
+                isJumping = false;
+                heroineTexture = standingText;
+                heroineRect.Y = 200;
+            }
+            if (kb.IsKeyDown(Keys.Down))
             {
                 if (!isJumping)
                 {
-                    isJumping = true;
-                    playerPosition.Y = getJumpHeight(gameTime.);
-                    playerText = jumping;
+                    isDucking = true;
+                    heroineTexture = duckingText;
+                }
+                else
+                {
+                    isJumping = false;
+                    heroineTexture = divingText;
+                    heroineRect.Y = 200;
                 }
             }
 
-            playerRct = new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 68, 100);
+            else if (!(kb.IsKeyDown(Keys.Down)))
+            {
+                if (isDucking)
+                {
+                    isDucking = false;
+                    heroineTexture = standingText;
+                }
 
+            }
+            // TODO: Add your update logic here
+            oldKb = kb;
             base.Update(gameTime);
-        }
-
-        private float getJumpHeight(int seconds)
-        {
-            return (float)(10 * seconds - (9.8 * seconds * seconds));
         }
 
         /// <summary>
@@ -115,10 +136,11 @@ namespace Interacting_Booleans
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+            GraphicsDevice.Clear(Color.Black);
+
             // TODO: Add your drawing code here
-            spriteBatch.Draw(standing, playerRct, Color.White);
+            spriteBatch.Begin();
+            spriteBatch.Draw(heroineTexture, heroineRect, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
