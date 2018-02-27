@@ -18,12 +18,13 @@ namespace Interacting_Booleans_Part_2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        State state;
 
         Rectangle heroineRect;
-        Texture2D divingText, duckingText, jumpingText, standingText, heroineTexture;
+        Texture2D DIVING_TEXT, DUCKING_TEXT, JUMPING_TEXT, STANDING_TEXT, heroineTexture;
         bool isJumping, isDucking;
         KeyboardState oldKb = Keyboard.GetState();
-        int jumpVelocity = 10;
+        int JUMP_VELOCITY = 10;
         int yVelocity;
 
         public Game1()
@@ -42,6 +43,7 @@ namespace Interacting_Booleans_Part_2
         {
             // TODO: Add your initialization logic here
             heroineRect = new Rectangle(350, 150, 100, 200);
+            state = State.Standing;
             base.Initialize();
         }
 
@@ -55,10 +57,10 @@ namespace Interacting_Booleans_Part_2
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            divingText = Content.Load<Texture2D>("diving");
-            duckingText = Content.Load<Texture2D>("ducking");
-            jumpingText = Content.Load<Texture2D>("jumping");
-            standingText = Content.Load<Texture2D>("standing");
+            DIVING_TEXT = Content.Load<Texture2D>("diving");
+            DUCKING_TEXT = Content.Load<Texture2D>("ducking");
+            JUMPING_TEXT = Content.Load<Texture2D>("jumping");
+            STANDING_TEXT = Content.Load<Texture2D>("standing");
         }
 
         /// <summary>
@@ -77,51 +79,36 @@ namespace Interacting_Booleans_Part_2
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-            KeyboardState kb = Keyboard.GetState();
-            if (kb.IsKeyDown(Keys.J))
-            {
-                if (!isJumping && !isDucking)
-                {
-                    isJumping = true;
-                    yVelocity = jumpVelocity;
-                    heroineTexture = jumpingText;
-                    heroineRect.Y -= 100;
-                }
-            }
-            else if (!(kb.IsKeyDown(Keys.J)))
-            {
-                isJumping = false;
-                heroineTexture = standingText;
-                heroineRect.Y = 200;
-            }
-            if (kb.IsKeyDown(Keys.Down))
-            {
-                if (!isJumping)
-                {
-                    isDucking = true;
-                    heroineTexture = duckingText;
-                }
-                else
-                {
-                    isJumping = false;
-                    heroineTexture = divingText;
-                    heroineRect.Y = 200;
-                }
-            }
 
-            else if (!(kb.IsKeyDown(Keys.Down)))
-            {
-                if (isDucking)
-                {
-                    isDucking = false;
-                    heroineTexture = standingText;
-                }
-
-            }
             // TODO: Add your update logic here
+            switch (state)
+            {
+                case State.Standing:
+                    if (kb.IsKeyDown(Keys.J))
+                    {
+                        state = State.Jumping;
+                        yVelocity = JUMP_VELOCITY;
+                        heroineTexture = JUMPING_TEXT;
+                    }
+                    else if (kb.IsKeyDown(Keys.Down))
+                    {
+                        state = State.Ducking;
+                        heroineTexture = DUCKING_TEXT;
+                    }
+                    break;
+                case State.Jumping:
+
+                    break;
+                case State.Ducking:
+                    break;
+                case State.Diving:
+                    break;
+            }
+            
             oldKb = kb;
 
             base.Update(gameTime);
