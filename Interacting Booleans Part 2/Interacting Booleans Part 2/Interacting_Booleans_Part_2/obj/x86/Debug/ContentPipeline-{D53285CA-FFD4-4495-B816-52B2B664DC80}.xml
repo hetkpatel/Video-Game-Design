@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>diving.png</Source>
+      <Name>diving</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\bin\x86\Debug\Content\diving.xnb</Output>
+      <Time>2018-02-27T09:45:49.470261-06:00</Time>
+    </Item>
+    <Item>
+      <Source>ducking.png</Source>
+      <Name>ducking</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\bin\x86\Debug\Content\ducking.xnb</Output>
+      <Time>2018-02-27T09:45:49.501463-06:00</Time>
+    </Item>
+    <Item>
+      <Source>jumping.png</Source>
+      <Name>jumping</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\bin\x86\Debug\Content\jumping.xnb</Output>
+      <Time>2018-02-27T09:45:49.501463-06:00</Time>
+    </Item>
+    <Item>
+      <Source>standing.png</Source>
+      <Name>standing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\bin\x86\Debug\Content\standing.xnb</Output>
+      <Time>2018-02-27T09:45:49.517064-06:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{D53285CA-FFD4-4495-B816-52B2B664DC80}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\145371\Desktop\Video Game Design\Interacting Booleans Part 2\Interacting Booleans Part 2\Interacting_Booleans_Part_2\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

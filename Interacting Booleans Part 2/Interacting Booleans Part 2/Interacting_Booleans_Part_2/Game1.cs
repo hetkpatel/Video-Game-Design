@@ -22,10 +22,9 @@ namespace Interacting_Booleans_Part_2
 
         Rectangle heroineRect;
         Texture2D DIVING_TEXT, DUCKING_TEXT, JUMPING_TEXT, STANDING_TEXT, heroineTexture;
-        bool isJumping, isDucking;
         KeyboardState oldKb = Keyboard.GetState();
-        int JUMP_VELOCITY = 10;
-        int yVelocity;
+        int chargeTime;
+        const int MAX_CHARGE = 250;
 
         public Game1()
         {
@@ -42,6 +41,7 @@ namespace Interacting_Booleans_Part_2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            chargeTime = 0;
             heroineRect = new Rectangle(350, 150, 100, 200);
             state = State.Standing;
             base.Initialize();
@@ -61,6 +61,8 @@ namespace Interacting_Booleans_Part_2
             DUCKING_TEXT = Content.Load<Texture2D>("ducking");
             JUMPING_TEXT = Content.Load<Texture2D>("jumping");
             STANDING_TEXT = Content.Load<Texture2D>("standing");
+
+            heroineTexture = STANDING_TEXT;
         }
 
         /// <summary>
@@ -91,27 +93,44 @@ namespace Interacting_Booleans_Part_2
                     if (kb.IsKeyDown(Keys.J))
                     {
                         state = State.Jumping;
-                        yVelocity = JUMP_VELOCITY;
                         heroineTexture = JUMPING_TEXT;
                     }
                     else if (kb.IsKeyDown(Keys.Down))
                     {
                         state = State.Ducking;
+                        chargeTime = 0;
                         heroineTexture = DUCKING_TEXT;
                     }
                     break;
                 case State.Jumping:
-
+                    if (kb.IsKeyDown(Keys.Down))
+                    {
+                        state = State.Diving;
+                        heroineTexture = DIVING_TEXT;
+                    }
                     break;
                 case State.Ducking:
-                    break;
-                case State.Diving:
+                    chargeTime++;
+                    if (chargeTime > MAX_CHARGE)
+                    {
+                        superBomb();
+                    }
+                    if (!(kb.IsKeyDown(Keys.Down)))
+                    {
+                        state = State.Standing;
+                        heroineTexture = STANDING_TEXT;
+                    }
                     break;
             }
             
             oldKb = kb;
 
             base.Update(gameTime);
+        }
+
+        private void superBomb()
+        {
+            Console.WriteLine("SUPER BOMB");
         }
 
         /// <summary>
