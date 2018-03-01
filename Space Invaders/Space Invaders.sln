@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Space_Invaders", "Space Invaders\Space_Invaders\Space_Invaders.csproj", "{E3E9445C-A543-4C0D-9EA7-5E5E112642A4}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Space_InvadersContent", "Space Invaders\Space_InvadersContent\Space_InvadersContent.contentproj", "{2708FEBF-0402-47DF-8B5C-9A1AD19FB28F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3E9445C-A543-4C0D-9EA7-5E5E112642A4}.Debug|x86.ActiveCfg = Debug|x86
+		{E3E9445C-A543-4C0D-9EA7-5E5E112642A4}.Debug|x86.Build.0 = Debug|x86
+		{E3E9445C-A543-4C0D-9EA7-5E5E112642A4}.Release|x86.ActiveCfg = Release|x86
+		{E3E9445C-A543-4C0D-9EA7-5E5E112642A4}.Release|x86.Build.0 = Release|x86
+		{2708FEBF-0402-47DF-8B5C-9A1AD19FB28F}.Debug|x86.ActiveCfg = Debug|x86
+		{2708FEBF-0402-47DF-8B5C-9A1AD19FB28F}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

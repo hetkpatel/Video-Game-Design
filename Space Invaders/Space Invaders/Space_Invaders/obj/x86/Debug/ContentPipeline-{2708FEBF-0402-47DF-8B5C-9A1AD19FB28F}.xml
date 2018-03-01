@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>SpaceInvaders0.png</Source>
+      <Name>SpaceInvaders0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders0.xnb</Output>
+      <Time>2018-03-01T09:43:52.669338-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders1.png</Source>
+      <Name>SpaceInvaders1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders1.xnb</Output>
+      <Time>2018-03-01T09:43:52.684942-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders2.png</Source>
+      <Name>SpaceInvaders2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders2.xnb</Output>
+      <Time>2018-03-01T09:43:52.700546-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders3.png</Source>
+      <Name>SpaceInvaders3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders3.xnb</Output>
+      <Time>2018-03-01T09:43:52.700546-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders4.png</Source>
+      <Name>SpaceInvaders4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders4.xnb</Output>
+      <Time>2018-03-01T09:43:52.71615-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders5.png</Source>
+      <Name>SpaceInvaders5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders5.xnb</Output>
+      <Time>2018-03-01T09:43:52.731754-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders6.png</Source>
+      <Name>SpaceInvaders6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders6.xnb</Output>
+      <Time>2018-03-01T09:43:52.731754-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceInvaders7.png</Source>
+      <Name>SpaceInvaders7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\SpaceInvaders7.xnb</Output>
+      <Time>2018-03-01T09:43:52.747358-06:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{2708FEBF-0402-47DF-8B5C-9A1AD19FB28F}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_InvadersContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\145371\Desktop\Video Game Design\Space Invaders\Space Invaders\Space_Invaders\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

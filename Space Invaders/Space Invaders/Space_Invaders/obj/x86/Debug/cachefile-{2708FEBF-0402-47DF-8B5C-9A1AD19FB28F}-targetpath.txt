@@ -1,0 +1,8 @@
+Content\SpaceInvaders0.xnb
+Content\SpaceInvaders1.xnb
+Content\SpaceInvaders2.xnb
+Content\SpaceInvaders3.xnb
+Content\SpaceInvaders4.xnb
+Content\SpaceInvaders5.xnb
+Content\SpaceInvaders6.xnb
+Content\SpaceInvaders7.xnb
