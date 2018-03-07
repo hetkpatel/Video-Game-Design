@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System.IO;
 
 namespace ScribblePlatformer
@@ -14,6 +17,10 @@ namespace ScribblePlatformer
         private Tile[,] tiles;
         private Dictionary<string, Texture2D> tileSheets;
         public Dictionary<int, Rectangle> TileSourceRecs;
+
+        Player player;
+
+        private Vector2 start;
 
         private const int TileWidth = 64;
         private const int TileHeight = 64;
@@ -113,6 +120,9 @@ namespace ScribblePlatformer
                 case 'y':
                     return LoadVarietyTile("Blocks", 20, 5);
 
+                case '+':
+                    return LoadStartTile(_x, _y);
+
                 default:
                     throw new NotSupportedException(String.Format(
                         "Unsupported tile type character '{0}' at position {1}, {2}.", _tileType, _x, _y));
@@ -126,6 +136,22 @@ namespace ScribblePlatformer
             return new Tile(_tileSheetName, tileSheetIndex);
         }
 
+        private Tile LoadStartTile(int _x, int _y)
+        {
+            if (Player != null)
+                throw new NotSupportedException("A level may only have one starting point.");
+
+            start = new Vector2((_x * 64) + 48, (_y * 64) + 16);
+            player = new Player(this, start);
+
+            return new Tile(String.Empty, 0, TileCollision.Passable);
+        }
+
+        public void Update(GameTime _gameTime)
+        {
+            Player.Update(_gameTime);
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             DrawTiles(spriteBatch);
@@ -137,15 +163,22 @@ namespace ScribblePlatformer
             {
                 for (int x = 0; x < Width; ++x)
                 {
-                    Vector2 position = new Vector2(x, y) * Tile.Size;
-                    //spriteBatch.Draw(
-                    //    tileSheets[tiles[x, y].TileSheetName],
-                    //    position,
-                    //    TileSourceRecs[tiles[x, y].TileSheetIndex],
-                    //    Color.White);
-                    Console.WriteLine("Sheet" + tiles[x, y].TileSheetName);
+                    if (tiles[x, y].TileSheetName == "Blocks" || tiles[x, y].TileSheetName == "Platforms")
+                    {
+                        Vector2 position = new Vector2(x, y) * Tile.Size;
+                        spriteBatch.Draw(
+                            tileSheets[tiles[x, y].TileSheetName],
+                            position,
+                            TileSourceRecs[tiles[x, y].TileSheetIndex],
+                            Color.White);
+                    }
                 }
             }
+        }
+
+        public Player Player
+        {
+            get { return player; }
         }
 
         public ContentManager Content
