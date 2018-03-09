@@ -50,6 +50,26 @@ namespace ScribblePlatformer
             LoadTiles(path);
         }
 
+        public TileCollision GetCollision(int _x, int _y)
+        {
+            if (_x < 0 || _x >= Width)
+                return TileCollision.Impassable;
+            if (_y < 0 || _y >= Height)
+                return TileCollision.Passable;
+
+            return tiles[_x, _y].Collision;
+        }
+
+        public Rectangle GetBounds(int _x, int _y)
+        {
+            if (_x < 0 || _y < 0 || _x >= Width || _y >= Height)
+                return new Rectangle(_x * Tile.Width, _y * Tile.Height, Tile.Width, Tile.Height);
+            if (tiles[_x, _y].Collision == TileCollision.Platform)
+                return new Rectangle(_x * Tile.Width, (_y * Tile.Height) + 20, Tile.Width, Tile.Height - 20);
+
+            return new Rectangle(_x * Tile.Width, (_y * Tile.Height) + 5, Tile.Width, Tile.Height - 5);
+        }
+
         private void LoadTiles(string path)
         {
             int numOfTilesAcross = 0;
@@ -96,7 +116,7 @@ namespace ScribblePlatformer
             switch (_tileType)
             {
                 case '.':
-                    return new Tile(String.Empty, 0);
+                    return new Tile(String.Empty, 0, TileCollision.Passable);
 
                 case 'B':
                     return LoadVarietyTile("Platforms", 0, 5);
@@ -133,7 +153,10 @@ namespace ScribblePlatformer
         {
             int index = random.Next(_variationCount);
             int tileSheetIndex = _colorRow + index;
-            return new Tile(_tileSheetName, tileSheetIndex);
+            if (_tileSheetName == "Blocks")
+                return new Tile(_tileSheetName, tileSheetIndex, TileCollision.Impassable);
+
+            return new Tile(_tileSheetName, tileSheetIndex, TileCollision.Platform);
         }
 
         private Tile LoadStartTile(int _x, int _y)
@@ -149,12 +172,13 @@ namespace ScribblePlatformer
 
         public void Update(GameTime _gameTime)
         {
-            Player.Update(_gameTime);
+            player.Update(_gameTime);
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             DrawTiles(spriteBatch);
+            player.Draw(gameTime, spriteBatch);
         }
 
         private void DrawTiles(SpriteBatch spriteBatch)

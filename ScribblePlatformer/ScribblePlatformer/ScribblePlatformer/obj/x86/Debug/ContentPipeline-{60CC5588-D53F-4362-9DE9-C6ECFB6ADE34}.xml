@@ -20,13 +20,13 @@
       <Time>2018-03-05T09:28:00.3612109-06:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\player.png</Source>
-      <Name>Sprites\player</Name>
+      <Source>Sprites\Player\player.png</Source>
+      <Name>Sprites\Player\player</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\player.xnb</Output>
-      <Time>2018-03-07T08:59:27.3078113-06:00</Time>
+      <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\Player\player.xnb</Output>
+      <Time>2018-03-09T09:26:15.4940357-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

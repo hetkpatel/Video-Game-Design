@@ -229,7 +229,7 @@ namespace ScribblePlatformer
 
         public Level Level
         {
-            get { return Level; }
+            get { return level; }
         }
         Level level;
 

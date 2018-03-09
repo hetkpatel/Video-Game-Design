@@ -17,4 +17,5 @@ C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\obj\x86\Debug\ScribblePlatformer.exe
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\obj\x86\Debug\ScribblePlatformer.pdb
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Levels\Level01.txt
-C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\player.xnb
+C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\Player\player.xnb
+C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Levels\Level02.txt

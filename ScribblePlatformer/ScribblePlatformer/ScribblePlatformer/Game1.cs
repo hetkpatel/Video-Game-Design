@@ -64,7 +64,8 @@ namespace ScribblePlatformer
 
         private void LoadLevel()
         {
-            level = new Level(Services, @"Content/Levels/Level01.txt");
+            //level = new Level(Services, @"Content/Levels/Level01.txt");
+            level = new Level(Services, @"Content/Levels/Level02.txt");
         }
 
         /// <summary>
@@ -89,6 +90,7 @@ namespace ScribblePlatformer
                 this.Exit();
 
             // TODO: Add your update logic here
+            level.Update(gameTime);
 
             base.Update(gameTime);
         }
