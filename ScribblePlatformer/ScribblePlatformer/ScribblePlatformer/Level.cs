@@ -64,8 +64,6 @@ namespace ScribblePlatformer
         {
             if (_x < 0 || _y < 0 || _x >= Width || _y >= Height)
                 return new Rectangle(_x * Tile.Width, _y * Tile.Height, Tile.Width, Tile.Height);
-            if (tiles[_x, _y].Collision == TileCollision.Platform)
-                return new Rectangle(_x * Tile.Width, (_y * Tile.Height) + 20, Tile.Width, Tile.Height - 20);
 
             return new Rectangle(_x * Tile.Width, (_y * Tile.Height) + 5, Tile.Width, Tile.Height - 5);
         }

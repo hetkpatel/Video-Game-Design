@@ -41,12 +41,14 @@ namespace ScribblePlatformer
         {
             isPlaying = true;
         }
+
         public void ResetPlay()
         {
             currentFrame = 0;
             totalElapsed = 0;
             isPlaying = true;
         }
+
         public void Stop()
         {
             isPlaying = false;

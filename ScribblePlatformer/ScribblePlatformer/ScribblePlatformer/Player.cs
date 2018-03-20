@@ -11,9 +11,11 @@ using Microsoft.Xna.Framework.Media;
 
 namespace ScribblePlatformer
 {
-    class Player
+    class Player: AnimatedSprite
     {
-        private Texture2D playerSprite;
+        //private Texture2D playerSprite;
+        private string currentAnim = "Idle";
+        private SpriteEffects flip = SpriteEffects.None;
         private float movement;
         private bool isJumping;
         private bool wasJumping;
@@ -44,13 +46,52 @@ namespace ScribblePlatformer
 
         public void LoadContent()
         {
-            playerSprite = Level.Content.Load<Texture2D>("Sprites/Player/player");
-
-            int width = playerSprite.Width - 4;
-            int left = (playerSprite.Width - width) / 2;
-            int height = playerSprite.Height - 4;
-            int top = playerSprite.Height - height;
+            SpriteTextures.Add(Level.Content.Load<Texture2D>("Sprites/Player/player"));
+            Animation anim = new Animation();
+            anim.LoadAnimation("Idle", 0, new List<int>
+            {
+                0,
+                11,
+                0,
+                12
+            }, 7, true);
+            SpriteAnimations.Add("Idle", anim);
+            anim = new Animation();
+            anim.LoadAnimation("Walking", 0, new List<int>
+            {
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            }, 7, true);
+            SpriteAnimations.Add("Walking", anim);
+            anim = new Animation();
+            anim.LoadAnimation("Jump", 0, new List<int>
+            {
+                7,
+                8,
+                9,
+                10,
+                9,
+                8,
+                7
+            }, 20, false);
+            anim.AnimationCallBack(JumpAnimEnd);
+            SpriteAnimations.Add("Jump", anim);
+            int width = FrameWidth - 4;
+            int left = (FrameWidth - width) / 2;
+            int height = FrameHeight - 4;
+            int top = FrameHeight - height;
             localBounds = new Rectangle(left, top, width, height);
+        }
+
+        public void JumpAnimEnd()
+        {
+            currentAnim = "Idle";
+            SpriteAnimations[currentAnim].Play();
         }
 
         public void Update(GameTime _gameTime)
@@ -59,6 +100,7 @@ namespace ScribblePlatformer
 
             ApplyPhysics(_gameTime);
 
+            SpriteAnimations[currentAnim].Update(_gameTime);
             movement = 0.0f;
             isJumping = false;
         }
@@ -68,6 +110,9 @@ namespace ScribblePlatformer
             Position = _position;
             Velocity = Vector2.Zero;
             isAlive = true;
+            SpriteAnimations[currentAnim].Stop();
+            currentAnim = "Idle";
+            SpriteAnimations[currentAnim].ResetPlay();
         }
 
         public void ApplyPhysics(GameTime _gameTime)
@@ -101,9 +146,14 @@ namespace ScribblePlatformer
 
         public void Draw(GameTime _gameTime, SpriteBatch _spriteBatch)
         {
-            Rectangle source = new Rectangle(0, 0, playerSprite.Width, playerSprite.Height);
+            Rectangle source = GetFrameRectangle(SpriteAnimations[currentAnim].FrameToDraw);
 
-            _spriteBatch.Draw(playerSprite, position, source, Color.White, 0.0f, Origin, 1.0f, SpriteEffects.None, 0.0f);
+            if (Velocity.X < 0)
+                flip = SpriteEffects.FlipHorizontally;
+            else if (Velocity.X > 0)
+                flip = SpriteEffects.None;
+
+            _spriteBatch.Draw(SpriteTextures[0], Position, source, Color.White, 0.0f, Origin, 1.0f, flip, 0.0f);
         }
 
         private float DoJump(float _veloctiyY, GameTime _gameTime)
@@ -192,17 +242,30 @@ namespace ScribblePlatformer
             if (gamePadState.IsButtonDown(Buttons.DPadLeft) ||
                 keyboardState.IsKeyDown(Keys.Left) ||
                 keyboardState.IsKeyDown(Keys.A))
-                movement = 1.0f;
+                movement = -1.0f;
             else if (gamePadState.IsButtonDown(Buttons.DPadRight) ||
                 keyboardState.IsKeyDown(Keys.Right) ||
                 keyboardState.IsKeyDown(Keys.D))
-                movement = -1.0f;
+                movement = 1.0f;
 
             isJumping =
                 gamePadState.IsButtonDown(JumpButton) ||
                 keyboardState.IsKeyDown(Keys.Space) ||
                 keyboardState.IsKeyDown(Keys.Up) ||
                 keyboardState.IsKeyDown(Keys.W);
+
+            if (isJumping && currentAnim != "Jump")
+            {
+                SpriteAnimations[currentAnim].Stop();
+                currentAnim = "Jump";
+                SpriteAnimations[currentAnim].ResetPlay();
+            }
+            if (movement != 0 && currentAnim != "Jump" && currentAnim != "Walking")
+            {
+                SpriteAnimations[currentAnim].Stop();
+                currentAnim = "Walking";
+                SpriteAnimations[currentAnim].ResetPlay();
+            }
         }
 
         public Rectangle BoundingRectangle
@@ -218,7 +281,7 @@ namespace ScribblePlatformer
 
         public Vector2 Origin
         {
-            get { return new Vector2(playerSprite.Width / 2.0f, playerSprite.Height / 2.0f); }
+            get { return new Vector2(FrameWidth / 2.0f, FrameHeight / 2.0f); }
         }
 
         public bool IsOnGround
