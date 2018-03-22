@@ -1,0 +1,17 @@
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Write_Read_files.exe
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Write_Read_files.pdb
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\obj\x86\Debug\Write_Read_files.csprojResolveAssemblyReference.cache
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\obj\x86\Debug\Write_Read_files.exe
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\obj\x86\Debug\Write_Read_files.pdb
+C:\Users\145371\Desktop\Video Game Design\Write-Read files\Write-Read files\Write_Read_files\bin\x86\Debug\Content\SpriteFont1.xnb
