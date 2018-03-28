@@ -1,1 +1,3 @@
+C:\Users\183160\Desktop\ScribblePlatformer\ScribblePlatformer\ScribblePlatformerContent\obj\x86\Debug\ScribblePlatformerContent.contentprojResolveAssemblyReference.cache
+C:\Users\145371\Downloads\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\ScribblePlatformerContent\obj\x86\Debug\ScribblePlatformerContent.contentprojResolveAssemblyReference.cache
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformerContent\obj\x86\Debug\ScribblePlatformerContent.contentprojResolveAssemblyReference.cache

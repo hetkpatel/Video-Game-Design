@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Tiles\Blocks.xnb</Output>
-      <Time>2018-03-05T09:28:00.3300101-06:00</Time>
+      <Time>2018-03-05T09:33:28-06:00</Time>
     </Item>
     <Item>
       <Source>Tiles\Platforms.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Tiles\Platforms.xnb</Output>
-      <Time>2018-03-05T09:28:00.3612109-06:00</Time>
+      <Time>2018-03-05T09:33:28-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Player\player.png</Source>
@@ -26,11 +26,20 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\Player\player.xnb</Output>
-      <Time>2018-03-09T09:26:15.4940357-06:00</Time>
+      <Time>2018-03-26T09:52:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Enemies\muffinman.png</Source>
+      <Name>Sprites\Enemies\muffinman</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\Enemies\muffinman.xnb</Output>
+      <Time>2018-03-26T09:52:40-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
-      <ContentProjectGUID>{60CC5588-D53F-4362-9DE9-C6ECFB6ADE34}</ContentProjectGUID>
+      <ContentProjectGUID>{3EBE90B0-4C07-42A4-A4DA-2808B890F114}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>

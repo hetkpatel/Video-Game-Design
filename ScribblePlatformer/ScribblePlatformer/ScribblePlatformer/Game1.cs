@@ -28,10 +28,11 @@ namespace ScribblePlatformer
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = BackBufferWidth;
             graphics.PreferredBackBufferHeight = BackBufferHeight;
+            graphics.PreferredBackBufferWidth = BackBufferWidth;
             Content.RootDirectory = "Content";
 
+            // Frame Rate differs between platforms
             TargetElapsedTime = TimeSpan.FromTicks(TimeSpan.TicksPerSecond / TargetFrameRate);
         }
 
@@ -43,9 +44,8 @@ namespace ScribblePlatformer
         /// </summary>
         protected override void Initialize()
         {
-            this.IsMouseVisible = true;
             // TODO: Add your initialization logic here
-
+            IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -58,14 +58,13 @@ namespace ScribblePlatformer
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
             LoadLevel();
+            // TODO: use this.Content to load your game content here
         }
 
         private void LoadLevel()
         {
-            //level = new Level(Services, @"Content/Levels/Level01.txt");
-            level = new Level(Services, @"Content/Levels/Level02.txt");
+            level = new Level(Services, @"Content/Levels/Level01.txt");
         }
 
         /// <summary>
@@ -82,7 +81,7 @@ namespace ScribblePlatformer
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Update(GameTime gameTime)
+        protected override void Update(GameTime _gameTime)
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
@@ -90,9 +89,8 @@ namespace ScribblePlatformer
                 this.Exit();
 
             // TODO: Add your update logic here
-            level.Update(gameTime);
-
-            base.Update(gameTime);
+            level.Update(_gameTime);
+            base.Update(_gameTime);
         }
 
         /// <summary>
@@ -102,8 +100,9 @@ namespace ScribblePlatformer
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
             level.Draw(gameTime, spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

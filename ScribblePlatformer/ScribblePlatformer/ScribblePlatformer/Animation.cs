@@ -13,6 +13,18 @@ namespace ScribblePlatformer
 {
     class Animation
     {
+        public string AnimationName
+        {
+            get; private set;
+        }
+        public int TextureId
+        {
+            get; private set;
+        }
+        public int FrameToDraw
+        {
+            get { return frameList[currentFrame]; }
+        }
         public delegate void AnimationEndCallback();
         private AnimationEndCallback callBack;
         private List<int> frameList;
@@ -29,36 +41,31 @@ namespace ScribblePlatformer
             AnimationName = _animationName;
             TextureId = _textureId;
             frameList = _frameList;
-            frameCount = frameList.Count;
+            frameCount = _frameList.Count;
             framesPerSec = _framesPerSec;
             timePerFrame = (float)1 / framesPerSec;
             currentFrame = 0;
             totalElapsed = 0;
             loopAnimation = _loop;
         }
-
         public void Play()
         {
             isPlaying = true;
         }
-
         public void ResetPlay()
         {
             currentFrame = 0;
             totalElapsed = 0;
             isPlaying = true;
         }
-
         public void Stop()
         {
             isPlaying = false;
         }
-
         public void AnimationCallBack(AnimationEndCallback _callback)
         {
             callBack = _callback;
         }
-
         public void Update(GameTime _gameTime)
         {
             if (!isPlaying) return;
@@ -70,14 +77,10 @@ namespace ScribblePlatformer
             if (!loopAnimation && currentFrame == 0)
             {
                 isPlaying = false;
-                callBack?.Invoke();
+                if (callBack != null)
+                    callBack();
             }
         }
 
-        public string AnimationName { get; private set; }
-
-        public int TextureId { get; private set; }
-
-        public int FrameToDraw { get { return frameList[currentFrame]; } }
     }
 }

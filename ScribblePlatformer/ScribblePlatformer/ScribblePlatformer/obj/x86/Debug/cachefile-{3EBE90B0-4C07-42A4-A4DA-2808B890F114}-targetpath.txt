@@ -1,5 +1,5 @@
 Content\Tiles\Blocks.xnb
 Content\Tiles\Platforms.xnb
 Content\Sprites\Player\player.xnb
+Content\Sprites\Enemies\muffinman.xnb
 Content\Levels\Level01.txt
-Content\Levels\Level02.txt
