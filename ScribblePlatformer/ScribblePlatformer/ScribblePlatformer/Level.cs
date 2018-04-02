@@ -19,6 +19,8 @@ namespace ScribblePlatformer
         public Dictionary<int, Rectangle> TileSourceRects;
         private List<Enemy> enemies = new List<Enemy>();
         private List<Enemy> deadEnemies = new List<Enemy>();
+        private List<Collectable> collectables = new List<Collectable>();
+        private List<Collectable> collectedCollectables = new List<Collectable>();
 
         public Player Player
         {
@@ -128,6 +130,10 @@ namespace ScribblePlatformer
                     return LoadStartTile(_x, _y);
                 case 'e':
                     return LoadEnemyTile(_x, _y, "e");
+                case 's':
+                    return LoadCollectableTile(_x, _y, "s");
+                case 'S':
+                    return LoadCollectableTile(_x, _y, "S");
 
                 default:
                     throw new NotSupportedException(String.Format("Unsupported tile type character '{0}' at position {1}, {2}.", _tileType, _x, _y));
@@ -155,12 +161,19 @@ namespace ScribblePlatformer
             player = new Player(this, start);
             return new Tile(String.Empty, 0, TileCollision.Passable);
         }
+        private Tile LoadCollectableTile(int _x, int _y, string _collectable)
+        {
+            Vector2 position = new Vector2((_x * 64) + 48, (_y * 64) + 20);
+            collectables.Add(new Collectable(this, position, _collectable));
+            return new Tile(String.Empty, 0, TileCollision.Passable);
+        }
         public void Update(GameTime _gameTime)
         {
             Player.Update(_gameTime);
             if (Player.IsCompletelyDead)
                 Player.Reset(start);
             UpdateEnemies(_gameTime);
+            UpdateCollectables(_gameTime);
         }
         private void UpdateEnemies(GameTime _gameTime)
         {
@@ -175,31 +188,14 @@ namespace ScribblePlatformer
                         if (Player.BoundingRectangle.Intersects(enemy.BoundingRectangle))
                             OnPlayerKilled();
                     }
-
-                    //Console.WriteLine("Player.Right: " + Player.BoundingRectangle.Right + "\nEnemy.Right: " + enemy.BoundingRectangle.Right);
-
-                    //Console.WriteLine("Player.Left: " + Player.BoundingRectangle.Left + "\nEnemy.Left: " + enemy.BoundingRectangle.Left);
-
-                    //Console.WriteLine("Player.Bottom: " + Player.BoundingRectangle.Bottom + "\nEnemy.Bottom: " + enemy.BoundingRectangle.Bottom);
-
-                    //Console.WriteLine("Player.Top: " + Player.BoundingRectangle.Top + "\nEnemy.Top: " + enemy.BoundingRectangle.Top);
-
-
-
-                    // Touching an enemy instantly kills the player
-                    //if (enemy.BoundingRectangle.Intersects(Player.BoundingRectangle))
-                    //{
-                    //if (enemy.BoundingRectangle.Y > Player.BoundingRectangle.Y)
-                    //{
-                    //    //OnEnemyKilled(enemy);
-                    //    OnPlayerKilled();
-                    //}
-                    //else
-                    //{
-                    //    //OnPlayerKilled();
-                    //    OnEnemyKilled(enemy);
-                    //}
-                    //}
+                    // Touching an enemy instantly kills the enemy
+                    else
+                    {
+                        if (enemy.BoundingRectangle.Intersects(player.BoundingRectangle))
+                        {
+                            OnEnemyKilled(enemy);
+                        }
+                    }
                 }
                 else
                 {
@@ -214,6 +210,29 @@ namespace ScribblePlatformer
                     enemies.Remove(deadEnemy);
                 }
                 deadEnemies.Clear();
+            }
+        }
+        private void UpdateCollectables(GameTime _gameTime)
+        {
+            foreach (Collectable collectable in collectables)
+            {
+                collectable.Update(_gameTime);
+                if (player.IsAlive && collectable.IsAlive)
+                {
+                    // Touching an enemy instantly kills the player
+                    if (collectable.BoundingRectangle.Intersects(Player.BoundingRectangle))
+                    {
+                        OnCollectableCollected(collectable);
+                    }
+                }
+            }
+            if (collectedCollectables.Count > 0)
+            {
+                foreach (Collectable collectable in collectedCollectables)
+                {
+                    collectables.Remove(collectable);
+                }
+                collectedCollectables.Clear();
             }
         }
         private void OnPlayerKilled()
@@ -243,10 +262,17 @@ namespace ScribblePlatformer
         {
             DrawTiles(_spriteBatch);
             player.Draw(_gameTime, _spriteBatch);
+            foreach (Collectable collectable in collectables)
+                collectable.Draw(_gameTime, _spriteBatch);
             foreach (Enemy enemy in enemies)
                 enemy.Draw(_gameTime, _spriteBatch);
         }
 
+        private void OnCollectableCollected(Collectable _collectable)
+        {
+            _collectable.OnKilled();
+            collectedCollectables.Add(_collectable);
+        }
         public void DrawTiles(SpriteBatch sb)
         {
             for (int y = 0; y < Height; ++y)

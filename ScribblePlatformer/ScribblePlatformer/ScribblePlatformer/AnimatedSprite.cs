@@ -25,7 +25,14 @@ namespace ScribblePlatformer
             framesPerRow = 4;
             SpriteTextures = new List<Texture2D>();
             SpriteAnimations = new Dictionary<string, Animation>();
-
+        }
+        public AnimatedSprite(int _frameWidth, int _frameHeight, int _framesPerRow)
+        {
+            FrameWidth = _frameWidth;
+            FrameHeight = _frameHeight;
+            framesPerRow = _framesPerRow;
+            SpriteTextures = new List<Texture2D>();
+            SpriteAnimations = new Dictionary<string, Animation>();
         }
         public Vector2 Origin
         {

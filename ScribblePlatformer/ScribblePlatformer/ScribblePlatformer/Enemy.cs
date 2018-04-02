@@ -64,7 +64,7 @@ namespace ScribblePlatformer
                 return new Rectangle(left, top, localBounds.Width, localBounds.Height);
             }
         }
-        public Enemy(Level _level, Vector2 _position, string _enemy)
+        public Enemy(Level _level, Vector2 _position, string _enemy) : base(96, 96, 4)
         {
             level = _level;
             position = _position;

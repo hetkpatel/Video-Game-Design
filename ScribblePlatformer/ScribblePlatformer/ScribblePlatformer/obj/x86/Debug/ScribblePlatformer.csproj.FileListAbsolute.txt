@@ -61,3 +61,4 @@ C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\obj\x86\Debug\ScribblePlatformer.exe
 C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\obj\x86\Debug\ScribblePlatformer.pdb
+C:\Users\145371\Desktop\Video Game Design\ScribblePlatformer\ScribblePlatformer\ScribblePlatformer\bin\x86\Debug\Content\Sprites\Collectables\scribbles.xnb

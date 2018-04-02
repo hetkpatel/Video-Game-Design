@@ -69,7 +69,13 @@ namespace ScribblePlatformer
             }
         }
         
-        public Player(Level _level, Vector2 _position)
+        //public Player(Level _level, Vector2 _position)
+        //{
+        //    level = _level;
+        //    LoadContent();
+        //    Reset(_position);
+        //}
+        public Player(Level _level, Vector2 _position) : base(96, 96, 4)
         {
             level = _level;
             LoadContent();
