@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+using System.IO;
+
 namespace Dungeon_Floor
 {
     /// <summary>
@@ -22,8 +24,8 @@ namespace Dungeon_Floor
         private Level level;
 
         private const int TargetFrameRate = 60;
-        private const int BackBufferWidth = 3000;
-        private const int BackBufferHeight = 1500;
+        private const int BackBufferWidth = 640;
+        private const int BackBufferHeight = 400;
 
         public Game1()
         {
@@ -64,7 +66,7 @@ namespace Dungeon_Floor
 
         private void LoadLevel()
         {
-            level = new Level(Services, @"Content/Levels/Level01.txt");
+            level = new Level(Services);
         }
 
         /// <summary>
@@ -89,7 +91,7 @@ namespace Dungeon_Floor
                 this.Exit();
 
             // TODO: Add your update logic here
-            level.Update(gameTime);
+            //level.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -99,10 +101,10 @@ namespace Dungeon_Floor
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            level.Draw(gameTime, spriteBatch);
+            //level.Draw(gameTime, spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
