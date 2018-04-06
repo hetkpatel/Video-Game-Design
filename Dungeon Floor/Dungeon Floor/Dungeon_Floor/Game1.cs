@@ -104,7 +104,7 @@ namespace Dungeon_Floor
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            //level.Draw(gameTime, spriteBatch);
+            //level.DrawTiles(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

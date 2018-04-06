@@ -14,33 +14,35 @@ namespace Dungeon_Floor
 {
     class Level : IDisposable
     {
-        private Tile[,] tiles;
-        private Dictionary<int, Rectangle> assestsRct;
+        //private Tile[,] tiles;
+        private List<int> tiles;
+        private List<Rectangle> assestsRct;
+        private List<Vector2> tilePositions;
         private Texture2D assestsSheet;
+        private const int XPadding = 1180, YPadding = 550;
         public ContentManager Content
         {
             get { return content; }
         }
         ContentManager content;
-
-        private const int TileWidth = 30;
-        private const int TileHeight = 30;
+        
         private const int Row = 100;
-        private const int Col = 50;
+        private const int Columns = 50;
         public int Rows
         {
             get { return Row; }
         }
-        public int Columns
+        public int Col
         {
-            get { return Col; }
+            get { return Columns; }
         }
 
         public Level(IServiceProvider _serviceprovider)
         {
             content = new ContentManager(_serviceprovider, "Content");
             assestsSheet = Content.Load<Texture2D>("Tiles/DungeonFloorMap");
-            assestsRct = new Dictionary<int, Rectangle>();
+            assestsRct = new List<Rectangle>();
+            tilePositions = new List<Vector2>();
 
             int X = 0, Y = 0;
             for (int i = 0;i < 60;i++)
@@ -50,27 +52,105 @@ namespace Dungeon_Floor
                     X = 0;
                     Y += 33;
                 }
-                assestsRct.Add(i, new Rectangle(X, Y, 32, 32));
+                assestsRct.Add(new Rectangle(X, Y, 30, 30));
                 X += 33;
             }
+            
+            for (int y = 0; y < Col; ++y)
+            {
+                for (int x = 0; x < Rows; ++x)
+                {
+                    tilePositions.Add(new Vector2(x, y) * new Vector2(30));
+                }
+            }
 
-            //LoadTiles(path);
+            for (int i = 0; i < tilePositions.Count; i++)
+                tilePositions[i] = new Vector2(tilePositions[i].X - XPadding, tilePositions[i].Y - YPadding);
+
+            LoadTiles(@"Content/Levels/Level01.txt");
         }
 
-        //public void DrawTiles(SpriteBatch sb)
-        //{
-        //    for (int y = 0; y < Columns; ++y)
-        //    {
-        //        for (int x = 0; x < Rows; ++x)
-        //        {
-        //            if (tileSheets.ContainsKey(tiles[x, y].TileSheetName))
-        //            {
-        //                Vector2 position = new Vector2(x, y) * Tile.Size;
-        //                sb.Draw(tileSheets[tiles[x, y].TileSheetName], position, TileSourceRects[tiles[x, y].TileSheetIndex], Color.White);
-        //            }
-        //        }
-        //    }
-        //}
+        private void LoadTiles(string path)
+        {
+            int numOfTilesAcross = 0;
+            List<string> lines = new List<string>();
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    string line = reader.ReadLine();
+                    numOfTilesAcross = line.Length;
+                    while (line != null)
+                    {
+                        lines.Add(line);
+                        int nextLineWidth = line.Length;
+                        if (nextLineWidth != numOfTilesAcross)
+                            throw new Exception(String.Format("The length of line {0} is different from all preceding lines.", lines.Count));
+                        line = reader.ReadLine();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+
+            for (int y = 0; y < Col; ++y)
+            {
+                for (int x = 0; x < Row; ++x)
+                {
+                    string currentRow = lines[y];
+                    char tileType = currentRow[x];
+                    tiles.Add((int) Char.GetNumericValue(tileType));
+                }
+            }
+
+            for (int i = 0;i < tiles.Count;i++)
+            {
+                Console.WriteLine(tiles[i]);
+            }
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            KeyboardState kb = Keyboard.GetState();
+            const int movemnetInt = 5;
+            if (kb.IsKeyDown(Keys.Right))
+            {
+                for (int i = 0; i < tilePositions.Count; i++)
+                    tilePositions[i] = new Vector2(tilePositions[i].X - movemnetInt, tilePositions[i].Y);
+            }
+            else if (kb.IsKeyDown(Keys.Left))
+            {
+                for (int i = 0; i < tilePositions.Count; i++)
+                    tilePositions[i] = new Vector2(tilePositions[i].X + movemnetInt, tilePositions[i].Y);
+            }
+            if (kb.IsKeyDown(Keys.Up))
+            {
+                for (int i = 0; i < tilePositions.Count; i++)
+                    tilePositions[i] = new Vector2(tilePositions[i].X, tilePositions[i].Y + movemnetInt);
+            }
+            else if (kb.IsKeyDown(Keys.Down))
+            {
+                for (int i = 0; i < tilePositions.Count; i++)
+                    tilePositions[i] = new Vector2(tilePositions[i].X, tilePositions[i].Y - movemnetInt);
+            }
+        }
+
+        public void DrawTiles(SpriteBatch sb)
+        {
+            int index = 0;
+            for (int y = 0; y < Col; ++y)
+            {
+                for (int x = 0; x < Rows; ++x)
+                {
+                    sb.Draw(assestsSheet, tilePositions[index], assestsRct[0], Color.White);
+                    index++;
+                }
+            }
+        }
 
         public void Dispose()
         {

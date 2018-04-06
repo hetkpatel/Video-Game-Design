@@ -15,3 +15,4 @@ C:\Users\145371\Desktop\Video Game Design\Dungeon Floor\Dungeon Floor\Dungeon_Fl
 C:\Users\145371\Desktop\Video Game Design\Dungeon Floor\Dungeon Floor\Dungeon_Floor\obj\x86\Debug\Dungeon_Floor.exe
 C:\Users\145371\Desktop\Video Game Design\Dungeon Floor\Dungeon Floor\Dungeon_Floor\obj\x86\Debug\Dungeon_Floor.pdb
 C:\Users\145371\Desktop\Video Game Design\Dungeon Floor\Dungeon Floor\Dungeon_Floor\bin\x86\Debug\Content\Tiles\DungeonFloorMap.xnb
+C:\Users\145371\Desktop\Video Game Design\Dungeon Floor\Dungeon Floor\Dungeon_Floor\bin\x86\Debug\Content\Levels\Level01.txt
