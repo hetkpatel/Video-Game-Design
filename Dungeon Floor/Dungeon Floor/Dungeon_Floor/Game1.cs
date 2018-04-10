@@ -91,7 +91,7 @@ namespace Dungeon_Floor
                 this.Exit();
 
             // TODO: Add your update logic here
-            //level.Update(gameTime);
+            level.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -104,7 +104,7 @@ namespace Dungeon_Floor
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            //level.DrawTiles(spriteBatch);
+            level.DrawTiles(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

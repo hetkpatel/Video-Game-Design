@@ -14,7 +14,6 @@ namespace Dungeon_Floor
 {
     class Level : IDisposable
     {
-        //private Tile[,] tiles;
         private List<int> tiles;
         private List<Rectangle> assestsRct;
         private List<Vector2> tilePositions;
@@ -40,6 +39,7 @@ namespace Dungeon_Floor
         public Level(IServiceProvider _serviceprovider)
         {
             content = new ContentManager(_serviceprovider, "Content");
+            tiles = new List<int>();
             assestsSheet = Content.Load<Texture2D>("Tiles/DungeonFloorMap");
             assestsRct = new List<Rectangle>();
             tilePositions = new List<Vector2>();
@@ -103,13 +103,8 @@ namespace Dungeon_Floor
                 {
                     string currentRow = lines[y];
                     char tileType = currentRow[x];
-                    tiles.Add((int) Char.GetNumericValue(tileType));
+                    tiles.Add((int)Char.GetNumericValue(tileType));
                 }
-            }
-
-            for (int i = 0;i < tiles.Count;i++)
-            {
-                Console.WriteLine(tiles[i]);
             }
         }
 
@@ -146,7 +141,7 @@ namespace Dungeon_Floor
             {
                 for (int x = 0; x < Rows; ++x)
                 {
-                    sb.Draw(assestsSheet, tilePositions[index], assestsRct[0], Color.White);
+                    sb.Draw(assestsSheet, tilePositions[index], assestsRct[tiles[index]], Color.White);
                     index++;
                 }
             }
