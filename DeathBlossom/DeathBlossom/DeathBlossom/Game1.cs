@@ -92,6 +92,7 @@ namespace DeathBlossom
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        bool shoot = true;
         protected override void Update(GameTime gameTime)
         {
             KeyboardState kb = Keyboard.GetState();
@@ -109,7 +110,16 @@ namespace DeathBlossom
 
             if (ship.IsFiring)
             {
-                missileList.Add(new Missile(missileTex, ship.Location, ship.Heading, gunstarRect));
+                if (gameTime.TotalGameTime.Seconds % 0 == 0 && shoot)
+                {
+                    missileList.Add(new Missile(missileTex, ship.Location, ship.Heading, gunstarRect));
+                    shoot = false;
+                }
+                if (gameTime.TotalGameTime.Seconds % 0 != 0)
+                {
+                    shoot = true;
+                }
+                Console.WriteLine(gameTime.TotalGameTime.Seconds % 2 == 0);
             }
 
             foreach (Missile missile in missileList)
